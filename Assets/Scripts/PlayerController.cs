@@ -12,6 +12,10 @@ public class PlayerController : MonoBehaviour
     [Header("Visual")]
     [SerializeField] private Transform visual;
 
+    [Header("Jump")]
+    [SerializeField] private float jumpForce = 10f;
+    [SerializeField] private GroundCollider groundDetector;
+
     private Rigidbody2D _rb;
     private Vector2 _moveInput;
     private bool _isFacingRight = true;
@@ -27,6 +31,17 @@ public class PlayerController : MonoBehaviour
         if ((_moveInput.x > 0 && !_isFacingRight) || 
         (_moveInput.x < 0 && _isFacingRight))
             Flip();
+    }
+
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        if (!context.performed || !groundDetector.IsGrounded) 
+            return;
+        
+        _rb.linearVelocity = new Vector2(
+            _rb.linearVelocity.x,
+            jumpForce
+        );
     }
 
     private void FixedUpdate()
@@ -51,4 +66,5 @@ public class PlayerController : MonoBehaviour
         _isFacingRight = !_isFacingRight;
         visual.Rotate(0, 180, 0);
     }
+
 }
