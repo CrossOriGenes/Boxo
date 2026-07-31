@@ -67,4 +67,8 @@ public class PlayerController : MonoBehaviour
         visual.Rotate(0, 180, 0);
     }
 
+    public void ResetMovement()
+    {
+        _moveInput = Vector2.zero;
+    }
 }
