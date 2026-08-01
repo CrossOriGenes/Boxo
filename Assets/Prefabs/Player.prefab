@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 142605649773041355}
   - component: {fileID: 4595071220272658514}
   - component: {fileID: 4849128348682872107}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Fall Particle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4904,7 +4904,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2848067046020080663}
   - component: {fileID: 3379240103892333097}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5010,7 +5010,7 @@ GameObject:
   - component: {fileID: 7422225756116283884}
   - component: {fileID: 5142045638623693651}
   - component: {fileID: 1961869372186533967}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Touch Particle Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9907,7 +9907,7 @@ GameObject:
   - component: {fileID: 2689607472017155340}
   - component: {fileID: 2715076024111568792}
   - component: {fileID: 8642660714221677523}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -10023,7 +10023,7 @@ MonoBehaviour:
   acceleration: 20
   deceleration: 25
   visual: {fileID: 6404702855861156483}
-  jumpForce: 9
+  jumpForce: 10
   groundDetector: {fileID: 8744085621514772663}
 --- !u!114 &2715076024111568792
 MonoBehaviour:
@@ -10265,7 +10265,7 @@ GameObject:
   - component: {fileID: 4844936069488607025}
   - component: {fileID: 1432391629172584353}
   - component: {fileID: 8043687061356897787}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Left-Collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10358,7 +10358,7 @@ GameObject:
   - component: {fileID: 3557073251800082100}
   - component: {fileID: 3655253349968965700}
   - component: {fileID: 7775678540351384160}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Right-Collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10450,7 +10450,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8442291333637681499}
   - component: {fileID: 4765814076090050891}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10503,7 +10503,7 @@ GameObject:
   - component: {fileID: 8590978032551064710}
   - component: {fileID: 3525051838097016703}
   - component: {fileID: 8744085621514772663}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10586,7 +10586,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GroundCollider
   groundLayers:
     serializedVersion: 2
-    m_Bits: 192
+    m_Bits: 704
   fallParticles: {fileID: 4595071220272658514}
 --- !u!1 &8290063781571569966
 GameObject:
@@ -10599,7 +10599,7 @@ GameObject:
   - component: {fileID: 647376627506897281}
   - component: {fileID: 2929254966510197566}
   - component: {fileID: 8413585366380261410}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Touch Particle Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15491,7 +15491,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 270669858857174663}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SideCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15525,7 +15525,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6404702855861156483}
   - component: {fileID: 7025959696990978649}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15618,7 +15618,7 @@ GameObject:
   - component: {fileID: 539032316468699476}
   - component: {fileID: 1993895476122853296}
   - component: {fileID: 5373798518516285760}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Die Particle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

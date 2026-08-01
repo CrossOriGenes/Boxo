@@ -66,6 +66,8 @@ public class PlayerController : MonoBehaviour
         _isFacingRight = !_isFacingRight;
         visual.Rotate(0, 180, 0);
     }
+    
+    public bool IsMoving => Mathf.Abs(_moveInput.x) > 0.01f;
 
     public void ResetMovement()
     {

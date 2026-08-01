@@ -8,7 +8,7 @@ TagManager:
   - Boundary
   - Spikes
   - Blower
-  - Moving Platform
+  - Floating Platforms
   layers:
   - Default
   - TransparentFX
@@ -19,8 +19,8 @@ TagManager:
   - Level Boundary
   - Ground
   - Objects
+  - Floating Platforms
   - Player
-  - 
   - 
   - 
   - 

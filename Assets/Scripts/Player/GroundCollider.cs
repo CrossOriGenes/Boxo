@@ -8,7 +8,9 @@ public class GroundCollider : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Ground") || other.CompareTag("Boundary"))
+        if (other.CompareTag("Ground") || 
+        other.CompareTag("Boundary") ||
+        other.CompareTag("Floating Platforms"))
         {
             fallParticles.Play();
             IsGrounded = true;    
@@ -17,7 +19,9 @@ public class GroundCollider : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Ground") || other.CompareTag("Boundary"))
+        if (other.CompareTag("Ground") || 
+        other.CompareTag("Boundary") ||
+        other.CompareTag("Floating Platforms"))
         {
             IsGrounded = false;
         }
