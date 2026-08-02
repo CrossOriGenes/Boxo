@@ -9,6 +9,7 @@ TagManager:
   - Spikes
   - Blower
   - Floating Platforms
+  - Checkpoint
   layers:
   - Default
   - TransparentFX

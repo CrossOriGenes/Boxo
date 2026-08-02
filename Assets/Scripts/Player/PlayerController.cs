@@ -6,8 +6,6 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private float acceleration = 20f;
-    [SerializeField] private float deceleration = 25f;
 
     [Header("Visual")]
     [SerializeField] private Transform visual;
@@ -52,12 +50,9 @@ public class PlayerController : MonoBehaviour
     private void HandleMovement()
     {
         float _targetSpeed = _moveInput.x * moveSpeed;
-        float _speedDifference = _targetSpeed - _rb.linearVelocity.x;
-        float _accelerationRate = Mathf.Abs(_targetSpeed) > 0.01f ? acceleration : deceleration;
-        float _movement = _speedDifference * _accelerationRate;
-        _rb.AddForce(
-            Vector2.right * _movement,
-            ForceMode2D.Force
+        _rb.linearVelocity = new Vector2(
+            _targetSpeed,
+            _rb.linearVelocityY
         );
     }
 

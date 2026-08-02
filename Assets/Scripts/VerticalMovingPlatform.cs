@@ -1,16 +1,16 @@
 using UnityEngine;
 
-public class HorizontalMovingPlatform : MonoBehaviour
+public class VerticalMovingPlatform : MonoBehaviour
 {
     [Header("Waypoints")]
-    [SerializeField] private Transform _pointA; 
-    [SerializeField] private Transform _pointB; 
-    
+    [SerializeField] private Transform _pointA;
+    [SerializeField] private Transform _pointB;
+
     [Header("Controls")]
     [Range(0f, 5f)]
-    [SerializeField] private float _speed = 1.2f; 
+    [SerializeField] private float _speed = 1.2f;
 
-    private Rigidbody2D _rb, _passenger; 
+    private Rigidbody2D _rb, _passenger;
     private PlayerController _playerController;
     private bool _movingToB = true;
     private Vector2 _lastPosition;
@@ -21,13 +21,13 @@ public class HorizontalMovingPlatform : MonoBehaviour
         _lastPosition = _rb.position;
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         Transform target = _movingToB ? _pointB : _pointA;
 
         Vector2 targetPosition = new Vector2(
-            target.position.x,
-            _rb.position.y
+            _rb.position.x,
+            target.position.y
         );
         Vector2 nextPosition = Vector2.MoveTowards(
             _rb.position,
@@ -37,14 +37,12 @@ public class HorizontalMovingPlatform : MonoBehaviour
         _rb.MovePosition(nextPosition);
 
         Vector2 delta = nextPosition - _lastPosition;
-
         if (_passenger != null)
             if (!_playerController.IsMoving)
-                _passenger.position += delta;   
-
+                _passenger.position += delta;
         _lastPosition = nextPosition;
 
-        if (Mathf.Abs(_rb.position.x - target.position.x) < 0.01f)
+        if (Mathf.Abs(_rb.position.y - target.position.y) < 0.01f)
             _movingToB = !_movingToB;
     }
 
