@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _rb;
     private Vector2 _moveInput;
     private bool _isFacingRight = true;
+    private bool _canControl = true;
 
     private void Awake()
     {
@@ -24,6 +25,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
+        if (!_canControl) return;
         _moveInput = context.ReadValue<Vector2>();
         if ((_moveInput.x > 0 && !_isFacingRight) || 
         (_moveInput.x < 0 && _isFacingRight))
@@ -32,7 +34,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (!context.performed || !groundDetector.IsGrounded) 
+        if (!context.performed || !groundDetector.IsGrounded || !_canControl) 
             return;
         
         _rb.linearVelocity = new Vector2(
@@ -67,4 +69,9 @@ public class PlayerController : MonoBehaviour
     {
         _moveInput = Vector2.zero;
     }
+
+    public void SetControlsEnabled(bool value)
+    {
+        _canControl = value;
+    } 
 }

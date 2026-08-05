@@ -4950,7 +4950,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000993455ce6dca250045c0c0a167b0fb8b
+  m_ApplyToSortingLayers: 00000000993455ce6dca250045c0c0a167b0fb8b518acb86
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -9907,6 +9907,7 @@ GameObject:
   - component: {fileID: 2689607472017155340}
   - component: {fileID: 2715076024111568792}
   - component: {fileID: 8642660714221677523}
+  - component: {fileID: 3097471421114840882}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -10020,8 +10021,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 4.5
-  acceleration: 20
-  deceleration: 25
   visual: {fileID: 6404702855861156483}
   jumpForce: 10
   groundDetector: {fileID: 8744085621514772663}
@@ -10181,7 +10180,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -1946439577
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Time: 0.2
@@ -10254,6 +10253,24 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
+--- !u!111 &3097471421114840882
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2901706665938173229}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 174f5a32029c34b88bb122cf5e3f03de, type: 2}
+  - {fileID: 7400000, guid: 003a78ea3f811449c8abedc14028beb8, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_UpdateMode: 1
+  m_CullingType: 0
 --- !u!1 &3415761668302725380
 GameObject:
   m_ObjectHideFlags: 0
@@ -15593,8 +15610,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -1946439577
-  m_SortingLayer: 5
-  m_SortingOrder: 5
+  m_SortingLayer: 6
+  m_SortingOrder: 10
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 14de76e4ea110477c9cb87222b46a96f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
