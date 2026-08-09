@@ -66,6 +66,9 @@ TagManager:
   - name: Player
     uniqueID: 2348527719
     locked: 0
+  - name: Overlay
+    uniqueID: 798921645
+    locked: 0
   m_RenderingLayers:
   - Default
   m_MigratedRenderPipelines: []
