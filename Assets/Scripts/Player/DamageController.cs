@@ -29,6 +29,7 @@ public class DamageController : MonoBehaviour
     public void Die()
     {
         _deathParticle.Play();
+        AudioManager.Instance.PlaySFX(SFXType.Death);
         _playerController.enabled = false;
         _groundCheck.SetActive(false);
         _sideCheck.SetActive(false);

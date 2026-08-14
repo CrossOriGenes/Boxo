@@ -31,6 +31,11 @@ public class Checkpoint : MonoBehaviour
         DamageController damage = other.GetComponentInChildren<DamageController>();
         damage.SetRespawnPoint(spawnPoint.position);
 
+        AudioManager.Instance.PlaySFXAtPosition(
+            SFXType.Checkpoint,
+            transform.position
+        );
+
         ActivateCheckpoint();
     }
 
@@ -39,7 +44,7 @@ public class Checkpoint : MonoBehaviour
         _spriteRenderer.sprite = activeSprite;
         
         transform
-            .DOScale(1.02f, 0.40f)
+            .DOScale(1f, 0.2f)
             .SetEase(Ease.InOutQuad)
             .SetLoops(2, LoopType.Yoyo);
         

@@ -12,6 +12,7 @@ public class GroundCollider : MonoBehaviour
         other.CompareTag("Boundary") ||
         other.CompareTag("Floating Platforms"))
         {
+            AudioManager.Instance.PlaySFX(SFXType.FallThud);
             fallParticles.Play();
             IsGrounded = true;    
         }     

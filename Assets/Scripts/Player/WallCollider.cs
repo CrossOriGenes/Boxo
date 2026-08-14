@@ -11,6 +11,7 @@ public class WallCollider : MonoBehaviour
         if (!_hasTouchedWall && 
         (other.CompareTag("Ground") || other.CompareTag("Boundary")))
         {
+            AudioManager.Instance.PlaySFX(SFXType.TouchThud);
             touchParticles.Play();
             _hasTouchedWall = true;
         }
