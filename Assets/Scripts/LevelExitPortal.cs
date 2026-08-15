@@ -14,6 +14,12 @@ public class LevelExitPortal : MonoBehaviour
     private Rigidbody2D _rb;
     private PlayerController _playerController;
     private Light2D _playerLight;
+    private SpriteRenderer _portalSprite;
+
+    private void Awake()
+    {
+        _portalSprite = GetComponent<SpriteRenderer>();
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -41,8 +47,12 @@ public class LevelExitPortal : MonoBehaviour
         sequence.AppendCallback(
             () => other.GetComponent<Animation>().Play("PortalIn")
         );
-        sequence.AppendInterval(0.45f);
-            
+        sequence.AppendInterval(0.5f);
+        sequence.AppendCallback(
+            () => _portalSprite.DOFade(0f, 0.75f)
+                               .SetEase(Ease.OutQuad)
+        );
+        sequence.AppendInterval(0.3f);    
         sequence.AppendCallback(
             () => StartCoroutine(ShowLevelCompletedScreen())
         );
