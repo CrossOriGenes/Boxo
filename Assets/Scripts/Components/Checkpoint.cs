@@ -12,6 +12,9 @@ public class Checkpoint : MonoBehaviour
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private Light2D checkpointLight;
 
+    [Header("Next Level Key")]
+    [SerializeField] private GameObject _key;
+
     private SpriteRenderer _spriteRenderer;
     private bool _isActivated;
 
@@ -35,6 +38,8 @@ public class Checkpoint : MonoBehaviour
             SFXType.Checkpoint,
             transform.position
         );
+
+        _key.SetActive(true);
 
         ActivateCheckpoint();
     }

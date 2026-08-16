@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4396696491830788858
 Transform:
   m_ObjectHideFlags: 0
@@ -170,7 +170,6 @@ MonoBehaviour:
   _centerPoint: {fileID: 435773147967258142}
   _globalLight: {fileID: 0}
   _levelCompletedUI: {fileID: 0}
-  _portalSprite: {fileID: 5272364543027448528}
 --- !u!1 &5627534223231589770
 GameObject:
   m_ObjectHideFlags: 0

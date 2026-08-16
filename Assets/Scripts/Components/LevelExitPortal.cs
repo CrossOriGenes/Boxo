@@ -45,7 +45,13 @@ public class LevelExitPortal : MonoBehaviour
             .SetEase(Ease.InOutSine)
         );
         sequence.AppendCallback(
-            () => other.GetComponent<Animation>().Play("PortalIn")
+            () => {
+                other.GetComponent<Animation>().Play("PortalIn");
+                AudioManager.Instance.PlaySFXAtPosition(
+                    SFXType.PortalIn,
+                    transform.position
+                );
+            }
         );
         sequence.AppendInterval(0.5f);
         sequence.AppendCallback(
@@ -85,6 +91,8 @@ public class LevelExitPortal : MonoBehaviour
         yield return fadeSequence.WaitForCompletion();
         yield return new WaitForSeconds(.15f);
 
+        AudioManager.Instance.PlaySFX(SFXType.LevelCompleted);
+
         _levelCompletedUI.Show(
             score: 32,
             starsEarned: 5,
@@ -95,5 +103,8 @@ public class LevelExitPortal : MonoBehaviour
         );
 
         Time.timeScale = 0;
+
+        yield return new WaitForSecondsRealtime(.75f);
+        AudioManager.Instance.CrossFadeToMenuMusic();
     }
 }

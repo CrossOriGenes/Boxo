@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using DG.Tweening;
 
 public enum SFXType
 {
@@ -41,7 +42,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip _menuMusic;
 
     [Range(0f, 1f)]
-    [SerializeField] private float _musicVolume = .35f;
+    [SerializeField] private float _musicVolume = 0.35f;
+    [SerializeField] private float _musicFadeDuration = 0.8f;
 
     [Header("SFX")]
     [SerializeField] private SFXData[] _sfxData;
@@ -52,6 +54,7 @@ public class AudioManager : MonoBehaviour
 
     private Dictionary<SFXType, SFXData> _sfxDictionary;
     private Dictionary<Transform, AudioSource> _loopingSources = new();
+    private Tween _musicTween;
 
     private void Awake()
     {
@@ -87,9 +90,9 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    /** ------------------------------------
+    /* ------------------------------------
     ** ONE-SHOT SFX
-    * -------------------------------------- **/
+    * ------------------------------------- */
     public void PlaySFX(SFXType type)
     {
         if (!_sfxDictionary.TryGetValue(type, out SFXData data))
@@ -104,9 +107,9 @@ public class AudioManager : MonoBehaviour
         );
     }
     
-    /** ------------------------------------
+    /* ------------------------------------
     ** POSITIONAL ONE-SHOT SFX
-    * -------------------------------------- **/
+    * ------------------------------------- */
     public void PlaySFXAtPosition(SFXType type, Vector3 position)
     {
         if (!_sfxDictionary.TryGetValue(type, out SFXData data))
@@ -132,9 +135,9 @@ public class AudioManager : MonoBehaviour
         );
     }
 
-    /** ------------------------------------
+    /* ------------------------------------
     ** Positional one-shot SFX
-    * -------------------------------------- **/
+    * ------------------------------------- */
     public void StartLoop(SFXType type, Transform sourceTransform)
     {
         if (_loopingSources.ContainsKey(sourceTransform)) return;
@@ -176,9 +179,9 @@ public class AudioManager : MonoBehaviour
         _loopingSources.Remove(sourceTransform);
     }
 
-    /** ---------------------------------
+    /* ---------------------------------
     ** MUSIC
-    * -------------------------------- **/
+    * ---------------------------------- */
     public void PlayGamePlayMusic()
     {
         PlayMusic(_gameplayMusic);
@@ -200,8 +203,57 @@ public class AudioManager : MonoBehaviour
         _musicSource.Play();    
     }
 
+    /* -------------------------------
+    ** MUSIC CROSSFADE
+    * -------------------------------- */
+    public void CrossFadeToMenuMusic()
+    {
+        CrossfadeMusic(_menuMusic);
+    }
+
+    public void CrossFadeToGameplayMusic()
+    {
+        CrossfadeMusic(_gameplayMusic);
+    }
+
+    private void CrossfadeMusic(AudioClip targetClip)
+    {
+        if (targetClip == null) return;
+
+        if (_musicSource.clip == targetClip &&
+        _musicSource.isPlaying) return;
+
+        _musicTween?.Kill();
+
+        _musicTween = DOTween.To(
+            () => _musicSource.volume,
+            value => _musicSource.volume = value,
+            0f,
+            _musicFadeDuration
+        )
+        .SetEase(Ease.InOutSine)
+        .SetUpdate(true)
+        .OnComplete(() =>
+        {
+            _musicSource.clip = targetClip;
+            _musicSource.volume = 0f;
+            _musicSource.Play();
+
+            _musicTween = DOTween.To(
+                () => _musicSource.volume,
+                value => _musicSource.volume = value,
+                _musicVolume,
+                _musicFadeDuration
+            )
+            .SetEase(Ease.InOutSine)
+            .SetUpdate(true);
+        });
+    }
+
+
     public void StopMusic()
     {
+        _musicTween?.Kill();
         _musicSource.Stop();
     }
 }
