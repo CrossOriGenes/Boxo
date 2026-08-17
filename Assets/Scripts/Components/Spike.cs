@@ -13,7 +13,7 @@ public class Spike : MonoBehaviour
         {
             _hasInjured = true;
             if (_controller != null) 
-                _controller.Die();
+                _controller.TakeDamage(10);
         }
     }
 

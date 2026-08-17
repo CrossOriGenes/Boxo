@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2580738145128214512}
   - component: {fileID: 3062854180336702833}
   m_Layer: 5
-  m_Name: Star block
+  m_Name: Gems block
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -392,7 +392,7 @@ GameObject:
   - component: {fileID: 8543645499087077560}
   - component: {fileID: 4449438404491621441}
   m_Layer: 5
-  m_Name: Stars Earned Label
+  m_Name: Gems Earned Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -415,7 +415,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 43.99, y: 24.28}
+  m_SizeDelta: {x: 50.965, y: 24.28}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &8543645499087077560
 CanvasRenderer:
@@ -445,7 +445,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Total Stars
+  m_text: Gems taken
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b0aeb816fda4b4c5a872aed63bd1b476, type: 2}
   m_sharedMaterial: {fileID: -7855141624856762240, guid: b0aeb816fda4b4c5a872aed63bd1b476, type: 2}
@@ -1122,7 +1122,7 @@ MonoBehaviour:
   - {fileID: 3254237479136720374}
   scoreText: {fileID: 4679189562267288562}
   xpText: {fileID: 2478112684352096050}
-  starText: {fileID: 581212568982812105}
+  gemsText: {fileID: 581212568982812105}
   healthText: {fileID: 8104947029934468739}
   reviveText: {fileID: 1834935428078936410}
   accuracyText: {fileID: 1078019664048985040}
@@ -2968,7 +2968,7 @@ GameObject:
   - component: {fileID: 1489610505938567395}
   - component: {fileID: 581212568982812105}
   m_Layer: 5
-  m_Name: Stars Earned Value
+  m_Name: Gems Earned Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

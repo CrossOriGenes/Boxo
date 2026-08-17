@@ -178,6 +178,7 @@ MonoBehaviour:
   _gameplayMusic: {fileID: 8300000, guid: 27ad98c3ba75d46a797ad74fa3b6e426, type: 3}
   _menuMusic: {fileID: 8300000, guid: 04a508151941c4f889a82c97c23f801f, type: 3}
   _musicVolume: 0.35
+  _musicFadeDuration: 0.8
   _sfxData:
   - type: 0
     clip: {fileID: 8300000, guid: b8c64d60fb0ab43108494cd2194958f5, type: 3}
@@ -187,7 +188,7 @@ MonoBehaviour:
     volume: 0.3
   - type: 2
     clip: {fileID: 8300000, guid: 988c4bf3a9da9458ab4a8b1addca6821, type: 3}
-    volume: 0.6
+    volume: 0.65
   - type: 3
     clip: {fileID: 8300000, guid: b35bf556621064d619d11275c10f6318, type: 3}
     volume: 0.75
@@ -200,6 +201,24 @@ MonoBehaviour:
   - type: 14
     clip: {fileID: 8300000, guid: d41859bc8cf5544b6bc5f1c307f7c2d8, type: 3}
     volume: 0.4
+  - type: 8
+    clip: {fileID: 8300000, guid: e96aa35ca8c9d41f89f46bb930b360ec, type: 3}
+    volume: 0.8
+  - type: 9
+    clip: {fileID: 8300000, guid: 6f3af2313b9d74b6a90a9857c30a2760, type: 3}
+    volume: 0.8
+  - type: 10
+    clip: {fileID: 8300000, guid: 6c817b2a187f34364b6b3524e0a6bd9c, type: 3}
+    volume: 0.75
+  - type: 11
+    clip: {fileID: 8300000, guid: e66417697de844445b6cef059d63054f, type: 3}
+    volume: 0.7
+  - type: 12
+    clip: {fileID: 8300000, guid: 6b4573055056f4423940d69246f0259e, type: 3}
+    volume: 0.6
+  - type: 13
+    clip: {fileID: 8300000, guid: 62e289a2f4fe142e1a5cbefbd6d0b791, type: 3}
+    volume: 0.65
   - type: 6
     clip: {fileID: 8300000, guid: 48180c1388c3b4eaeaab5f1d33cc7494, type: 3}
     volume: 0.45
@@ -209,6 +228,15 @@ MonoBehaviour:
   - type: 16
     clip: {fileID: 8300000, guid: 0abf068bbf2c04e52ae6b5285e776cde, type: 3}
     volume: 0.9
+  - type: 15
+    clip: {fileID: 8300000, guid: d735d8d44a05c44168327e5fa8485b3d, type: 3}
+    volume: 0.85
+  - type: 17
+    clip: {fileID: 8300000, guid: 31ab52d0a41074f568c16e6cdbb9f961, type: 3}
+    volume: 0.72
+  - type: 18
+    clip: {fileID: 8300000, guid: 1509f8da323c940a9bfd341bc6c9c57c, type: 3}
+    volume: 0.7
   _musicSource: {fileID: 4914374523235675893}
   _sfxSource: {fileID: 6996535894421161079}
 --- !u!1 &6306120053095473983

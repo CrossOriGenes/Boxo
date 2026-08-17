@@ -15,7 +15,7 @@ public class LevelCompletedUI : MonoBehaviour
     [Header("Texts")]
     [SerializeField] private TMP_Text scoreText;
     [SerializeField] private TMP_Text xpText;
-    [SerializeField] private TMP_Text starText;
+    [SerializeField] private TMP_Text gemsText;
     [SerializeField] private TMP_Text healthText;
     [SerializeField] private TMP_Text reviveText;
     [SerializeField] private TMP_Text accuracyText;
@@ -31,7 +31,7 @@ public class LevelCompletedUI : MonoBehaviour
 
         scoreText.text = "0%";
         xpText.text = "0";
-        starText.text = "0";
+        gemsText.text = "0";
         healthText.text = "0%";
         reviveText.text = "0";
         accuracyText.text = "0%";
@@ -39,7 +39,7 @@ public class LevelCompletedUI : MonoBehaviour
 
     public void Show(
         int score,
-        int starsEarned,
+        int gemsEarned,
         int xp,
         int health,
         int revives,
@@ -64,7 +64,7 @@ public class LevelCompletedUI : MonoBehaviour
         {
             AnimateNumbers(
                 score,
-                starsEarned,
+                gemsEarned,
                 xp,
                 health,
                 revives,
@@ -87,7 +87,7 @@ public class LevelCompletedUI : MonoBehaviour
 
     private void AnimateNumbers(
         int score,
-        int starsEarned,
+        int gemsEarned,
         int xp,
         int health,
         int revives,
@@ -107,9 +107,9 @@ public class LevelCompletedUI : MonoBehaviour
             () => 0,
             value =>
             {
-                starText.text = value.ToString();
+                gemsText.text = value.ToString();
             },
-            starsEarned,
+            gemsEarned,
             .8f
         ).SetUpdate(true);
         DOTween.To(
@@ -174,11 +174,10 @@ public class LevelCompletedUI : MonoBehaviour
                     .DOScale(1.15f, .18f)
                     .SetEase(Ease.OutQuad)
                     .SetLoops(2, LoopType.Yoyo)
+                    .OnComplete(
+                        () => AudioManager.Instance.PlaySFX(SFXType.BlingPop)
+                    )
             );
-            // seq.AppendInterval(.15f);
-            // seq.AppendCallback(
-            //     () => PlayStarSound(index)
-            // );
         }
     }
 

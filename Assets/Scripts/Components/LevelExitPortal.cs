@@ -95,7 +95,7 @@ public class LevelExitPortal : MonoBehaviour
 
         _levelCompletedUI.Show(
             score: 32,
-            starsEarned: 5,
+            gemsEarned: 5,
             xp: 324,
             health: 100,
             revives: 2,

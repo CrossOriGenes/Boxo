@@ -20,7 +20,9 @@ public enum SFXType
     SawBlade,
     Blower,
     MouseClick,
-    LevelCompleted
+    LevelCompleted,
+    BlingPop,
+    AchievementUnlocked
 }
 
 [System.Serializable]
