@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
@@ -26,6 +27,8 @@ public class DamageController : MonoBehaviour
     private const float MAX_HEALTH = 100f;
     private float _currentHealth;
     public static float GetMaxHealth => MAX_HEALTH;
+    public static event Action<float> OnHealthChanged;
+    public static event Action OnPlayerRevived;
 
     private void Awake()
     {
@@ -34,6 +37,7 @@ public class DamageController : MonoBehaviour
         _visualRenderer = _visual.GetComponent<SpriteRenderer>();
         _healthBarController = _healthBar.GetComponent<HealthBar>();
         _currentHealth = MAX_HEALTH;
+        OnHealthChanged?.Invoke(GetHealthPercent());
     }
 
     public void SetRespawnPoint(Vector3 position)
@@ -50,6 +54,7 @@ public class DamageController : MonoBehaviour
             MAX_HEALTH
         );
         ChangePlayerFaceByHealth();
+        OnHealthChanged?.Invoke(GetHealthPercent());
         if (_currentHealth == 0) 
             Die();
         else
@@ -83,12 +88,14 @@ public class DamageController : MonoBehaviour
         _healthBar.SetActive(true);
         _currentHealth = MAX_HEALTH;
         _healthBarController.ResetHealthBar();
+        OnHealthChanged?.Invoke(GetHealthPercent());
         FaceChanger(_happyMood);
         _trail.emitting = true;
         _groundCheck.SetActive(true);
         _sideCheck.SetActive(true);
         _playerController.ResetMovement();
         _playerController.enabled = true;
+        OnPlayerRevived?.Invoke();
     }
 
     private void ChangePlayerFaceByHealth()
@@ -118,5 +125,18 @@ public class DamageController : MonoBehaviour
                 _visualRenderer.DOFade(1f, 0.12f);
             }
         );
+    }
+    
+    private float GetHealthPercent()
+    {
+        return (_currentHealth / MAX_HEALTH) * 100f;
+    }
+
+    public void TakeMedikit()
+    {
+        _currentHealth = MAX_HEALTH;
+        _healthBarController.ResetHealthBar();
+        OnHealthChanged?.Invoke(GetHealthPercent());
+        FaceChanger(_happyMood);
     }
 }

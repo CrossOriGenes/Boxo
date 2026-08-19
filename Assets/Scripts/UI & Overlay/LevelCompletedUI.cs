@@ -41,7 +41,7 @@ public class LevelCompletedUI : MonoBehaviour
         int score,
         int gemsEarned,
         int xp,
-        int health,
+        float health,
         int revives,
         float accuracy
         )
@@ -89,7 +89,7 @@ public class LevelCompletedUI : MonoBehaviour
         int score,
         int gemsEarned,
         int xp,
-        int health,
+        float health,
         int revives,
         float accuracy
     )
@@ -125,7 +125,7 @@ public class LevelCompletedUI : MonoBehaviour
             () => 0,
             value =>
             {
-                healthText.text = value + "%";
+                healthText.text = (int)value + "%";
             },
             health,
             .8f
@@ -143,7 +143,7 @@ public class LevelCompletedUI : MonoBehaviour
             () => 0,
             value =>
             {
-                accuracyText.text = value + "%";
+                accuracyText.text = (int)value + "%";
             },
             accuracy,
             .8f
@@ -184,8 +184,8 @@ public class LevelCompletedUI : MonoBehaviour
     private int CalculateStars(float accuracy)
     {
         if (accuracy >= 90) return 3;
-        if (accuracy >= 70) return 2;
-        if (accuracy >= 45) return 1;
+        if (accuracy >= 55) return 2;
+        if (accuracy >= 25) return 1;
 
         return 0;
     }

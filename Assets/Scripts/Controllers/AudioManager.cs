@@ -10,6 +10,7 @@ public enum SFXType
     Death,
     Pickup,
     Checkpoint,
+    Healer,
     PortalIn,
     PortalOut,
     SwitchPress,

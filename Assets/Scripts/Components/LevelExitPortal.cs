@@ -91,20 +91,24 @@ public class LevelExitPortal : MonoBehaviour
         yield return fadeSequence.WaitForCompletion();
         yield return new WaitForSeconds(.15f);
 
+        GameStatsManager.Instance.CompleteLevel();
+
         AudioManager.Instance.PlaySFX(SFXType.LevelCompleted);
 
+        LevelResult result = ScoreManager.Instance.Result;
         _levelCompletedUI.Show(
-            score: 32,
-            gemsEarned: 5,
-            xp: 324,
-            health: 100,
-            revives: 2,
-            accuracy: 92f
+            score: result.Score,
+            gemsEarned: result.Gems,
+            xp: result.XP,
+            health: result.Health,
+            revives: result.Revives,
+            accuracy: result.Accuracy
         );
 
         Time.timeScale = 0;
 
         yield return new WaitForSecondsRealtime(.75f);
+        
         AudioManager.Instance.CrossFadeToMenuMusic();
     }
 }

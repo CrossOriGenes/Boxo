@@ -1,7 +1,10 @@
 using UnityEngine;
+using System;
 
 public class Gem : MonoBehaviour
 {
+    public static event Action OnGemCollected;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -11,7 +14,7 @@ public class Gem : MonoBehaviour
                 transform.position
             );
 
-            // Gem collection for UI event here
+            OnGemCollected?.Invoke();
             
             Destroy(gameObject);
         }
