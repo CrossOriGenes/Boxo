@@ -8,6 +8,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private LevelRuntimeData _levelRuntimeData;
     private LevelResult _result;
     public LevelResult Result => _result;
+    public LevelConfig LevelConfig => _levelRuntimeData.Config;
 
     private void Awake()
     {

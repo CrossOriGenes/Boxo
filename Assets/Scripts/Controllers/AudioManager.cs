@@ -19,7 +19,11 @@ public enum SFXType
     TurretLight,
     TurretLaser,
     SawBlade,
-    Blower,
+    Blower
+}
+
+public enum UISFXType
+{
     MouseClick,
     LevelCompleted,
     BlingPop,
@@ -30,6 +34,16 @@ public enum SFXType
 public class SFXData
 {
     public SFXType type;
+    public AudioClip clip;
+
+    [Range(0f, 1f)]
+    public float volume = 1f;
+}
+
+[System.Serializable]
+public class UISFXData
+{
+    public UISFXType type;
     public AudioClip clip;
 
     [Range(0f, 1f)]
@@ -48,15 +62,19 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private float _musicVolume = 0.35f;
     [SerializeField] private float _musicFadeDuration = 0.8f;
 
-    [Header("SFX")]
+    [Header("Game SFX")]
     [SerializeField] private SFXData[] _sfxData;
+    
+    [Header("UI SFX")]
+    [SerializeField] private UISFXData[] _uiSfxData;
 
     [Header("Audio Sources")]
     [SerializeField] private AudioSource _musicSource;
     [SerializeField] private AudioSource _sfxSource;
+    [SerializeField] private AudioSource _uiSfxSource;
 
     private Dictionary<SFXType, SFXData> _sfxDictionary;
-    private Dictionary<Transform, AudioSource> _loopingSources = new();
+    private Dictionary<UISFXType, UISFXData> _uiSfxDictionary;
     private Tween _musicTween;
 
     private void Awake()
@@ -70,11 +88,17 @@ public class AudioManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
         BuildSFXDictionary();
+        BuildUISFXDictionary();
         _musicSource.loop = true;
         _musicSource.playOnAwake = false;
         _sfxSource.playOnAwake = false;
+        _uiSfxSource.playOnAwake = false;
     }
 
+
+    /* ------------------------------------
+    ** GAMEPLAY SFX BUILD
+    * ------------------------------------- */
     private void BuildSFXDictionary()
     {
         _sfxDictionary = new();
@@ -93,8 +117,31 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+
     /* ------------------------------------
-    ** ONE-SHOT SFX
+    ** UI SFX BUILD
+    * ------------------------------------- */
+    private void BuildUISFXDictionary()
+    {
+        _uiSfxDictionary = new();
+
+        foreach (UISFXData data in _uiSfxData)
+        {
+            if (data.clip == null) continue;
+            
+            if (_uiSfxDictionary.ContainsKey(data.type))
+            {
+                Debug.LogWarning($"Duplicate SFX type found: {data.type}");
+                continue;
+            }
+
+            _uiSfxDictionary.Add(data.type, data);
+        }
+    }
+
+
+    /* ------------------------------------
+    ** GAMEPLAY ONE-SHOT SFX
     * ------------------------------------- */
     public void PlaySFX(SFXType type)
     {
@@ -109,9 +156,28 @@ public class AudioManager : MonoBehaviour
             data.volume
         );
     }
-    
+
+
     /* ------------------------------------
-    ** POSITIONAL ONE-SHOT SFX
+    ** UI ONE-SHOT SFX
+    * ------------------------------------- */
+    public void PlayUISFX(UISFXType type)
+    {
+        if (!_uiSfxDictionary.TryGetValue(type, out UISFXData data))
+        {
+            Debug.LogWarning($"SFX not found: {type}");
+            return;    
+        }
+
+        _uiSfxSource.PlayOneShot(
+            data.clip, 
+            data.volume
+        );
+    }
+    
+
+    /* ------------------------------------
+    ** POSITIONAL GAMEPLAY SFX
     * ------------------------------------- */
     public void PlaySFXAtPosition(SFXType type, Vector3 position)
     {
@@ -138,49 +204,6 @@ public class AudioManager : MonoBehaviour
         );
     }
 
-    /* ------------------------------------
-    ** Positional one-shot SFX
-    * ------------------------------------- */
-    public void StartLoop(SFXType type, Transform sourceTransform)
-    {
-        if (_loopingSources.ContainsKey(sourceTransform)) return;
-
-        if (!_sfxDictionary.TryGetValue(type, out SFXData data))
-        {
-            Debug.LogWarning($"SFX not found: {type}");
-            return;    
-        }
-
-        GameObject loopObject = new GameObject($"Loop_{type}");
-        loopObject.transform.SetParent(sourceTransform);
-        loopObject.transform.localPosition = Vector3.zero;
-
-        AudioSource source = loopObject.AddComponent<AudioSource>();
-        source.clip = data.clip;
-        source.volume = data.volume;
-        source.loop = true;
-        source.playOnAwake = false;
-        source.spatialBlend = 1f;
-        source.Play();
-        _loopingSources.Add(
-            sourceTransform,
-            source
-        );
-    }
-    
-    public void StopLoop(Transform sourceTransform)
-    {
-        if (!_loopingSources.TryGetValue(sourceTransform, out AudioSource source))
-            return;
-
-        if (source != null)
-        {
-            source.Stop();
-            Destroy(source.gameObject);
-        }
-
-        _loopingSources.Remove(sourceTransform);
-    }
 
     /* ---------------------------------
     ** MUSIC
@@ -205,6 +228,35 @@ public class AudioManager : MonoBehaviour
         _musicSource.volume = _musicVolume;
         _musicSource.Play();    
     }
+
+    public void StopMusic()
+    {
+        _musicTween?.Kill();
+        _musicSource.Stop();
+    }
+
+    public void RestartGamePlayMusic()
+    {
+        if (_gameplayMusic == null) return;
+
+        _musicTween?.Kill();
+
+        _musicSource.Stop();
+        _musicSource.clip = _gameplayMusic;
+        _musicSource.volume = 0f;
+        _musicSource.Play();
+
+        _musicTween = 
+            DOTween.To(
+                () => _musicSource.volume,
+                value => _musicSource.volume = value,
+                _musicVolume,
+                _musicFadeDuration
+            )
+            .SetEase(Ease.InOutSine)
+            .SetUpdate(true);
+    }
+
 
     /* -------------------------------
     ** MUSIC CROSSFADE
@@ -254,9 +306,18 @@ public class AudioManager : MonoBehaviour
     }
 
 
-    public void StopMusic()
+    /* -------------------------------
+    ** PAUSE / RESUME AUDIO 
+    * -------------------------------- */
+    public void PauseAudio()
     {
-        _musicTween?.Kill();
-        _musicSource.Stop();
+        _musicSource.Pause();
+        _sfxSource.Pause();
+    }
+
+    public void ResumeAudio()
+    {
+        _musicSource.UnPause();
+        _sfxSource.UnPause();
     }
 }

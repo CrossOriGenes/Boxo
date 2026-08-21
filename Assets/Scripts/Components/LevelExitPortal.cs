@@ -93,7 +93,7 @@ public class LevelExitPortal : MonoBehaviour
 
         GameStatsManager.Instance.CompleteLevel();
 
-        AudioManager.Instance.PlaySFX(SFXType.LevelCompleted);
+        AudioManager.Instance.PlayUISFX(UISFXType.LevelCompleted);
 
         LevelResult result = ScoreManager.Instance.Result;
         _levelCompletedUI.Show(

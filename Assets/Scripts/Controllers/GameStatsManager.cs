@@ -13,6 +13,7 @@ public class GameStatsManager : MonoBehaviour
     private float _completionTime;
     private float _elapsedTime;
     private bool _levelCompleted;
+    private bool _isPaused;
 
     public int GemsCollected => _gemsCollected;
     public float HealthPercent => _healthPercent;
@@ -52,11 +53,12 @@ public class GameStatsManager : MonoBehaviour
         DamageController.OnPlayerRevived -= HandleRevives;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        if (_levelCompleted) return;
+        if (_levelCompleted || _isPaused) 
+            return;
 
-        _elapsedTime += Time.fixedDeltaTime;
+        _elapsedTime += Time.unscaledDeltaTime;
     }
 
     /* --------------------------
@@ -99,5 +101,13 @@ public class GameStatsManager : MonoBehaviour
         _elapsedTime = 0f;
         _completionTime = 0f;
         _levelCompleted = false;
+    }
+
+    /* --------------------------
+    ** SETTERS & GETTERS
+    ---------------------------- */
+    public void SetPaused(bool paused)
+    {
+        _isPaused = paused;
     }
 }

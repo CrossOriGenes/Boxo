@@ -24,10 +24,12 @@ public class LevelCompletedUI : MonoBehaviour
     [SerializeField] private RectTransform confirmButton;
 
     private CanvasGroup _canvasGroup;
+    private LevelConfig _config;
     
     private void Awake()
     {
         _canvasGroup = gameObject.GetComponent<CanvasGroup>();
+        _config = ScoreManager.Instance.LevelConfig;
 
         scoreText.text = "0%";
         xpText.text = "0";
@@ -53,11 +55,13 @@ public class LevelCompletedUI : MonoBehaviour
         
         Sequence sequence = DOTween.Sequence().SetUpdate(true);
         sequence.Append(
-            panel.DOScale(1f, .35f)
+            panel
+            .DOScale(1f, .35f)
             .SetEase(Ease.OutBack)
         );
         sequence.Join(
-            title.DOAnchorPosX(0, .65f)
+            title
+            .DOAnchorPosX(0, .65f)
             .SetEase(Ease.OutCubic)
         );
         sequence.AppendCallback(() =>
@@ -107,7 +111,7 @@ public class LevelCompletedUI : MonoBehaviour
             () => 0,
             value =>
             {
-                gemsText.text = value.ToString();
+                gemsText.text = $"{value}/{_config.totalGems}";
             },
             gemsEarned,
             .8f
@@ -175,7 +179,7 @@ public class LevelCompletedUI : MonoBehaviour
                     .SetEase(Ease.OutQuad)
                     .SetLoops(2, LoopType.Yoyo)
                     .OnComplete(
-                        () => AudioManager.Instance.PlaySFX(SFXType.BlingPop)
+                        () => AudioManager.Instance.PlayUISFX(UISFXType.BlingPop)
                     )
             );
         }

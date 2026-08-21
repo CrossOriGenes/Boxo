@@ -296,7 +296,7 @@ GameObject:
   - component: {fileID: 1328319639786968243}
   - component: {fileID: 2799796042639657220}
   m_Layer: 8
-  m_Name: Area Effector Particles Blow
+  m_Name: Airy Flicker Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5132,7 +5132,7 @@ GameObject:
   - component: {fileID: 4788582516734679583}
   - component: {fileID: 1503575408957303464}
   m_Layer: 8
-  m_Name: Area Effector Particle System Base
+  m_Name: Blow Base Origin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

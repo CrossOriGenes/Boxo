@@ -1,5 +1,6 @@
-using UnityEngine;
+using System.Collections.Generic;
 using DG.Tweening;
+using UnityEngine;
 
 public class AmbientLoopAudio : MonoBehaviour
 {
@@ -22,8 +23,13 @@ public class AmbientLoopAudio : MonoBehaviour
     [SerializeField] private float _fadeInDuration = 0.5f;
     [SerializeField] private float _fadeOutDuration = 0.6f;
 
+    private static readonly HashSet<AmbientLoopAudio> _instances = new();
+
     private Tween _volumeTween;
-    private bool _isPlaying, _isFadingOut;
+    private bool _isPlaying,
+    _isFadingOut,
+    _isPaused,
+    _wasPlayingBeforePause;
     private float _currentTargetVolume = -1f;
 
     private void Awake()
@@ -39,7 +45,8 @@ public class AmbientLoopAudio : MonoBehaviour
 
     private void Update()
     {
-        if (_player == null) return;
+        if (_isPaused || _player == null) 
+            return;
 
         float distance = Vector2.Distance(
             transform.position,
@@ -59,8 +66,14 @@ public class AmbientLoopAudio : MonoBehaviour
             FadeOut();
     }
 
+    private void OnEnable()
+    {
+        _instances.Add(this);
+    }
+
     private void OnDisable()
     {
+        _instances.Remove(this);
         _volumeTween?.Kill();
 
         if (_audioSource != null)
@@ -70,9 +83,59 @@ public class AmbientLoopAudio : MonoBehaviour
         }
 
         _isPlaying = false;
+        _isFadingOut = false;
+        _isPaused = false;
+        _wasPlayingBeforePause = false; 
         _currentTargetVolume = -1f;
     }
 
+
+    /* ---------------------------
+    ** PAUSE / RESUME
+    ----------------------------- */
+    public void Pause()
+    {
+        if (_isPaused) return;
+
+        _wasPlayingBeforePause = _isPlaying;
+        _isPaused = true;
+        _volumeTween?.Kill();
+
+        if (_wasPlayingBeforePause && _audioSource != null) 
+            _audioSource.Pause();
+    }
+
+    public void Resume()
+    {
+        if (!_isPaused) return;
+        _isPaused = false;
+        if (_wasPlayingBeforePause && _audioSource != null)
+            _audioSource.UnPause();
+        _wasPlayingBeforePause = false;
+    }
+
+    public static void PauseAll()
+    {
+        foreach (AmbientLoopAudio ambient in _instances)
+        {
+            if (ambient != null) 
+                ambient.Pause();
+        }
+    }
+
+    public static void ResumeAll()
+    {
+        foreach (AmbientLoopAudio ambient in _instances)
+        {
+            if (ambient != null)
+                ambient.Resume();
+        }
+    }
+
+
+    /* ---------------------------
+    ** VOLUME INTENSITY CALCULATION
+    ----------------------------- */
     private float CalculateVolume(float distance)
     {
         if (distance <= _fullVolumeDistance)
@@ -88,6 +151,10 @@ public class AmbientLoopAudio : MonoBehaviour
         return Mathf.Lerp(0f, _maxVolume, t);
     }
 
+
+    /* ---------------------------
+    ** FADE IN
+    ----------------------------- */
     private void FadeIn(float targetVolume)
     {
         if (!_isPlaying)
@@ -110,23 +177,29 @@ public class AmbientLoopAudio : MonoBehaviour
                     .SetEase(Ease.InOutSine);
     }
 
+    /* ---------------------------
+    ** FADE OUT
+    ----------------------------- */
     private void FadeOut()
     {
-        if (!_isPlaying || _isFadingOut) return;
+        if (!_isPlaying || _isFadingOut) 
+            return;
 
         _isFadingOut = true;
         _currentTargetVolume = 0f;
         
         _volumeTween?.Kill();
 
-        _volumeTween = _audioSource
-                    .DOFade(0f, _fadeOutDuration)
-                    .SetEase(Ease.InOutSine)
-                    .OnComplete(() =>
-                    {
-                        _audioSource.Stop();
-                        _isPlaying = false;
-                        _currentTargetVolume = -1f;
-                    });
+        _volumeTween = 
+            _audioSource
+            .DOFade(0f, _fadeOutDuration)
+            .SetEase(Ease.InOutSine)
+            .OnComplete(() =>
+                {
+                    _audioSource.Stop();
+                    _isPlaying = false;
+                    _currentTargetVolume = -1f;
+                }
+            );
     }
 }
