@@ -1,5 +1,4 @@
 using DG.Tweening;
-using UnityEngine.UI;
 using UnityEngine;
 
 public class LevelsMapUIController : MonoBehaviour
@@ -7,11 +6,6 @@ public class LevelsMapUIController : MonoBehaviour
     [Header("Texts & Buttons")]
     [SerializeField] private RectTransform titleTextTransform;
     [SerializeField] private GameObject playButton;
-
-    private void Awake()
-    {
-        // playButton.SetActive(false);
-    }
 
     private void Start()
     {
