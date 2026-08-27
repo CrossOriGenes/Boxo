@@ -23,6 +23,9 @@ public class LevelCompletedUI : MonoBehaviour
     [Header("Button")]
     [SerializeField] private RectTransform confirmButton;
 
+    [Header("Scene Closer")]
+    [SerializeField] private SceneTransitionUI _sceneTransitUI;
+
     private CanvasGroup _canvasGroup;
     private LevelConfig _config;
     
@@ -79,8 +82,8 @@ public class LevelCompletedUI : MonoBehaviour
         sequence.AppendInterval(.45f);
         sequence.Append(
             confirmButton
-            .DOAnchorPosY(-190, .35f)
-            .SetEase(Ease.OutBounce)
+            .DOAnchorPosY(-160f, .35f)
+            .SetEase(Ease.OutCubic)
         );
         sequence.AppendCallback(() =>
         {
@@ -192,5 +195,50 @@ public class LevelCompletedUI : MonoBehaviour
         if (accuracy >= 25) return 1;
 
         return 0;
+    }
+
+    public void OnAcceptAndClosePanel()
+    {
+        confirmButton
+        .DOScale(2.15f, .1f)
+        .SetEase(Ease.InOutCubic)
+        .SetLoops(2, LoopType.Yoyo)
+        .OnPlay(
+            () => AudioManager.Instance.PlayUISFX(UISFXType.MouseClick)
+        )
+        .SetUpdate(true);
+
+        Sequence sequence = DOTween.Sequence().SetUpdate(true);
+
+        sequence.Join(
+            confirmButton
+            .DOAnchorPosY(-460f, .35f)
+            .SetEase(Ease.OutQuad)
+        );
+        sequence.Join(
+            title
+            .DOAnchorPosX(-1500f, .35f)
+            .SetEase(Ease.OutQuad)
+        );
+        sequence.Append(
+            panel
+            .DOScale(0f, .35f)
+            .SetEase(Ease.OutQuad)
+        );
+        sequence.Join(
+            _canvasGroup
+            .DOFade(0f, .45f)
+            .SetEase(Ease.OutQuad)
+        );
+
+        sequence.OnComplete(() => 
+        {    
+            _canvasGroup.interactable = false;
+            _canvasGroup.blocksRaycasts = false;
+        
+            _sceneTransitUI.PlayClose();
+
+            AudioManager.Instance.PauseAudio();
+        });
     }
 }

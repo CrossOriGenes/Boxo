@@ -217,7 +217,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Move
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 30a2d17575be94894acda52413bcbe87, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 44c6123a61bc14b3e9c81515d73110e4, type: 2}
   m_sharedMaterial: {fileID: 7975387271542447248, guid: 44c6123a61bc14b3e9c81515d73110e4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -544,7 +544,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: BOXO
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 30a2d17575be94894acda52413bcbe87, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 44c6123a61bc14b3e9c81515d73110e4, type: 2}
   m_sharedMaterial: {fileID: 7975387271542447248, guid: 44c6123a61bc14b3e9c81515d73110e4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}

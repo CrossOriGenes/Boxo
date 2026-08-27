@@ -99,8 +99,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 43.55722}
-  m_SizeDelta: {x: 285, y: 417.11444}
+  m_AnchoredPosition: {x: 0, y: 44}
+  m_SizeDelta: {x: 285, y: 417}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &137080449260775472
 GameObject:
@@ -819,7 +819,7 @@ RectTransform:
   m_GameObject: {fileID: 2300338735638455307}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.0534399, y: 2.0534399, z: 2.2816}
+  m_LocalScale: {x: 2.0534399, y: 2.0534399, z: 2.05344}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8055555108256165606}
@@ -827,9 +827,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -500.00003}
-  m_SizeDelta: {x: 97.35, y: 39.55}
-  m_Pivot: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: -460}
+  m_SizeDelta: {x: 97, y: 40}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6468088534727642639
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -911,7 +911,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1317390962879667724}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2056385856533626370}
+        m_TargetAssemblyTypeName: LevelCompletedUI, Assembly-CSharp
+        m_MethodName: OnAcceptAndClosePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2457744905460828930
 GameObject:
   m_ObjectHideFlags: 0
@@ -1127,6 +1139,7 @@ MonoBehaviour:
   reviveText: {fileID: 1834935428078936410}
   accuracyText: {fileID: 1078019664048985040}
   confirmButton: {fileID: 5886331962752000590}
+  _sceneTransitUI: {fileID: 2099993028527468435, guid: 74bbbbdcc273b4d15a7152eacc47dca3, type: 3}
 --- !u!1 &2601437071946134568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1404,7 +1417,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: -1500, y: 290}
-  m_SizeDelta: {x: 982.31, y: 173.2}
+  m_SizeDelta: {x: 982, y: 173}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &8700945907518585356
 CanvasRenderer:
