@@ -1,23 +1,41 @@
+using System;
 using DG.Tweening;
 using UnityEngine.UI;
 using UnityEngine;
 
 public class LevelsMapUIController : MonoBehaviour
 {
-    [Header("References")]
-    [SerializeField] private RectTransform _titleTextTransform;
-    [SerializeField] private GameObject _playButton;
+    [Header("Scene UI References")]
     [SerializeField] private GameObject _nextButton;
     [SerializeField] private GameObject _prevButton;
     [SerializeField] private RectTransform _content;
     [SerializeField] private ScrollRect _scrollRect; 
+
+    [Header("Overlay UI References")]
+    [SerializeField] private CanvasGroup _keyRewardOverlay;    
+    [SerializeField] private RectTransform _rewardContent;
+    [SerializeField] private Animation _highlightAnim;    
+    [SerializeField] private Animation _keyAnim;    
+    [SerializeField] private ParticleSystem _rewardParticles;    
+    [SerializeField] private RectTransform _claimButtonPos;
 
     [Header("Movement")]
     [SerializeField] private float _moveDistance = 450f;
     [SerializeField] private float _moveDuration = .45f;
     [SerializeField] private Ease _moveEase = Ease.OutCubic;
 
+    public static event Action OnUnlockNextLevelRequest;
     private Tween _moveTween;
+
+    private void OnEnable()
+    {
+        SceneTransitionUI.OnTransitionOpened += HandleKeyClaimOverlay;
+    }
+
+    private void OnDisable()
+    {
+        SceneTransitionUI.OnTransitionOpened -= HandleKeyClaimOverlay;
+    }
 
     private void Start()
     {
@@ -56,21 +74,6 @@ public class LevelsMapUIController : MonoBehaviour
         AnimateTo(targetX);
     }
 
-    public void OnPlayLevel()
-    {
-        _playButton
-        .GetComponent<RectTransform>()
-        .DOScale(1.1f, .1f)
-        .SetEase(Ease.InOutCubic)
-        .SetLoops(2, LoopType.Yoyo)
-        .OnPlay(
-            () => AudioManager.Instance.PlayUISFX(UISFXType.MouseClick)
-        )
-        .OnComplete(
-            () => Debug.Log("Start Level")
-        );
-    }
-
     private void InitiateNavigation()
     {
         UpdateNavigationButtons();
@@ -105,6 +108,100 @@ public class LevelsMapUIController : MonoBehaviour
                         .DOAnchorPos(targetPosition, _moveDuration)
                         .SetEase(_moveEase)
                         .OnComplete(UpdateNavigationButtons);
+    }
+
+    private void HandleKeyClaimOverlay()
+    {   
+        OpenNextLevelKeyClaimOverlay();
+    }
+
+    private void OpenNextLevelKeyClaimOverlay()
+    {
+        Sequence openSequence = DOTween.Sequence();
+
+        openSequence.Append(
+            _keyRewardOverlay
+            .DOFade(1f, .45f)
+            .SetEase(Ease.InCubic)
+        );
+        openSequence.Join(
+            _rewardContent
+            .DOScale(1.1f, .6f)
+            .SetEase(Ease.InCubic)
+            .SetLoops(2, LoopType.Yoyo)
+            .OnPlay(() => 
+                AudioManager
+                .Instance
+                .PlayUISFX(
+                    UISFXType.AchievementUnlocked
+                )
+            )
+            .OnComplete(() =>
+            {
+                _rewardParticles.Play();
+                _highlightAnim.Play();
+            })
+        )
+        .JoinCallback(
+            () => _keyAnim.Play("RewardFlip")
+        );
+
+        openSequence.OnComplete(() =>
+        {
+            _claimButtonPos
+            .DOAnchorPosY(-350f, .9f)
+            .SetEase(Ease.InCubic);
+
+            _keyRewardOverlay.interactable = true;
+            _keyRewardOverlay.blocksRaycasts = true;
+        });
+    }
+
+    private void CloseNextLevelKeyClaimOverlay()
+    {
+        Sequence closeSequence = DOTween.Sequence();
+
+        closeSequence.Append(
+            _claimButtonPos
+            .DOAnchorPosY(-623f, .9f)
+            .SetEase(Ease.OutCubic)
+        )
+        .JoinCallback(() =>
+        {
+            _keyAnim.Stop("RewardFlip");
+            _rewardParticles.Stop();
+            _highlightAnim.Stop();
+        })
+        .Join(
+            _rewardContent
+            .DOScale(0f, .6f)
+            .SetEase(Ease.OutCubic)
+        )
+        .Join(
+            _keyRewardOverlay
+            .DOFade(0f, .45f)
+            .SetEase(Ease.OutCubic)
+        )
+        .OnComplete(() =>
+        {
+            _keyRewardOverlay.interactable = false;
+            _keyRewardOverlay.blocksRaycasts = false;
+
+            OnUnlockNextLevelRequest?.Invoke();
+        });
+    }
+
+    public void OnKeyToNextLvlClaimBtnClick()
+    {
+        _claimButtonPos
+        .DOScaleX(1.1f, .1f)
+        .SetEase(Ease.OutQuad)
+        .SetLoops(2, LoopType.Yoyo)
+        .OnPlay(
+            () => AudioManager.Instance.PlayUISFX(UISFXType.MouseClick)
+        );
+
+        CloseNextLevelKeyClaimOverlay();
     }
 
     private void OnDestroy()

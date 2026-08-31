@@ -113,8 +113,7 @@ public class SceneTransitionUI : MonoBehaviour
 
     public void PlayOpen()
     {
-        if (!_canPlayOpen) 
-            return;
+        if (!_canPlayOpen) return;
         _canPlayOpen = false;
 
         _loadingContentWrapper.SetActive(false);

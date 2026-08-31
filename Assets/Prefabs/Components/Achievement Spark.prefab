@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4026662045200157068}
   - component: {fileID: 1481225280387402372}
   m_Layer: 0
-  m_Name: Achievement Spark (small)
+  m_Name: Achievement Spark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,7 +48,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 0
+  looping: 1
   prewarm: 0
   playOnAwake: 0
   useUnscaledTime: 0
@@ -116,8 +116,8 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.65
-      minScalar: 0.35
+      scalar: 1.5
+      minScalar: 0.65
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -287,8 +287,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.1
-      minScalar: 0.04
+      scalar: 0.25
+      minScalar: 0.1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -751,7 +751,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.05
+      value: 2.73
       mode: 0
       spread: 0
       speed:
@@ -4859,9 +4859,9 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: -1756446745
-  m_SortingLayer: 4
-  m_SortingOrder: 1
+  m_SortingLayerID: 798921645
+  m_SortingLayer: 7
+  m_SortingOrder: 150
   m_MaskInteraction: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
