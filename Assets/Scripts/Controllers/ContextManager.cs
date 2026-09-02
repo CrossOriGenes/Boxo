@@ -2,41 +2,54 @@ using UnityEngine;
 
 public class ContextManager : MonoBehaviour
 {
-    public static ContextManager Instance { get; private set; }
+    private static ContextManager _instance;
+    public static ContextManager Instance 
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                GameObject ctxObj = new GameObject("ContextManager");
+                _instance = ctxObj.AddComponent<ContextManager>();
+            }
+
+            return _instance;
+        }
+    }
 
     private const string LAST_UNLOCKED_LEVEL_KEY = "LastUnlockedLevel";
+    private const string TOTAL_KEYS_COLLECTED_KEY = "TotalKeys";
 
-    private int _currentLevel;
-    private int _nextLevel;
+    private int _lastUnlockedLevel;
+    private int _totalKeys;
     private bool _isKeyCollected;
 
-    /* ---------------------------
-    ** PERSISTENT LEVEL PROGRESS
-    *---------------------------- */
     public int LastUnlockedLevel
     {
-        get => PlayerPrefs.GetInt(LAST_UNLOCKED_LEVEL_KEY, 1);
+        get => _lastUnlockedLevel;
         set
         {
-            int newValue = Mathf.Max(1, value);
-            PlayerPrefs.SetInt(LAST_UNLOCKED_LEVEL_KEY, newValue);
+            _lastUnlockedLevel = Mathf.Max(1, value);
+            PlayerPrefs.SetInt(
+                LAST_UNLOCKED_LEVEL_KEY, 
+                _lastUnlockedLevel
+            );
             PlayerPrefs.Save();
         }
     }
 
-    /* ---------------------------
-    ** PERSISTENT LEVEL PROGRESS
-    *---------------------------- */
-    public int CurrentLevel
+    public int TotalKeys
     {
-        get => _currentLevel;
-        set => _currentLevel = value;
-    }
-
-    public int NextLevel
-    {
-        get => _nextLevel;
-        set => _nextLevel = value;
+        get => _totalKeys;
+        set
+        {
+            _totalKeys = Mathf.Max(0, value);
+            PlayerPrefs.SetInt(
+                TOTAL_KEYS_COLLECTED_KEY, 
+                _totalKeys
+            );
+            PlayerPrefs.Save();
+        }
     }
 
     public bool IsKeyCollected
@@ -47,13 +60,56 @@ public class ContextManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance != null && Instance != this)
+        if (_instance != null && _instance != this)
         {
             Destroy(gameObject);
             return;
         }
 
-        Instance = this;
+        _instance = this;
         DontDestroyOnLoad(gameObject);
+
+        _lastUnlockedLevel = PlayerPrefs.GetInt(
+            LAST_UNLOCKED_LEVEL_KEY,
+            1
+        );
+        _totalKeys = PlayerPrefs.GetInt(
+            TOTAL_KEYS_COLLECTED_KEY,
+            0
+        );
+        _isKeyCollected = false;
+    }
+
+    public void AddKey()
+    {
+        TotalKeys++;
+    }
+
+    public void AddKeys(int amount)
+    {
+        if (amount <= 0) return;
+        TotalKeys += amount;
+    }
+
+    public void UseKey()
+    {
+        if (TotalKeys <= 0) return;
+        TotalKeys--;
+    }
+
+    public void ResetLevelsUnlocked()
+    {
+        PlayerPrefs.DeleteKey(LAST_UNLOCKED_LEVEL_KEY);
+        PlayerPrefs.Save();
+
+        _lastUnlockedLevel = 1;
+    }
+    
+    public void ResetKeysClaimed()
+    {
+        PlayerPrefs.DeleteKey(TOTAL_KEYS_COLLECTED_KEY);
+        PlayerPrefs.Save();
+        
+        _totalKeys = 0;
     }
 }

@@ -24,7 +24,7 @@ public class LevelsMapUIController : MonoBehaviour
     [SerializeField] private float _moveDuration = .45f;
     [SerializeField] private Ease _moveEase = Ease.OutCubic;
 
-    public static event Action OnUnlockNextLevelRequest;
+    public static event Action OnUpdateKeysCount;
     private Tween _moveTween;
 
     private void OnEnable()
@@ -112,6 +112,8 @@ public class LevelsMapUIController : MonoBehaviour
 
     private void HandleKeyClaimOverlay()
     {   
+        if (!ContextManager.Instance.IsKeyCollected) return;
+
         OpenNextLevelKeyClaimOverlay();
     }
 
@@ -187,7 +189,7 @@ public class LevelsMapUIController : MonoBehaviour
             _keyRewardOverlay.interactable = false;
             _keyRewardOverlay.blocksRaycasts = false;
 
-            OnUnlockNextLevelRequest?.Invoke();
+            OnUpdateKeysCount?.Invoke();
         });
     }
 
@@ -200,6 +202,9 @@ public class LevelsMapUIController : MonoBehaviour
         .OnPlay(
             () => AudioManager.Instance.PlayUISFX(UISFXType.MouseClick)
         );
+
+        ContextManager.Instance.AddKey();
+        ContextManager.Instance.IsKeyCollected = false;
 
         CloseNextLevelKeyClaimOverlay();
     }

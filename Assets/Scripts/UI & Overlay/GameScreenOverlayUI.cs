@@ -113,6 +113,9 @@ public class GameScreenOverlayUI : MonoBehaviour
         restartSequence.OnComplete(() =>
         {
             Time.timeScale = 1f;
+
+            ContextManager.Instance.IsKeyCollected = false;
+            
             AudioManager.Instance.RestartGamePlayMusic();
             SceneManager.LoadScene(
                 SceneManager.GetActiveScene().buildIndex
@@ -140,6 +143,9 @@ public class GameScreenOverlayUI : MonoBehaviour
         quitSequence.OnComplete(() =>
         {
             Time.timeScale = 1f;
+
+            ContextManager.Instance.IsKeyCollected = false;
+
             AudioManager.Instance.CrossFadeToMenuMusic();
             SceneManager.LoadScene("Levels Map");
         });

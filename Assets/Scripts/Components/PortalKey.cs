@@ -12,15 +12,17 @@ public class PortalKey : MonoBehaviour
         {
             Sequence sequence = DOTween.Sequence();
 
-            sequence.AppendCallback(
-                () => {
-                    AudioManager.Instance.PlaySFXAtPosition(
-                        SFXType.Pickup,
-                        transform.position
-                    );
-                    _exitPortal.SetActive(true);
-                }
-            );
+            sequence.AppendCallback(() => 
+            {
+                AudioManager.Instance.PlaySFXAtPosition(
+                    SFXType.Pickup,
+                    transform.position
+                );
+                
+                _exitPortal.SetActive(true);
+            
+                ContextManager.Instance.IsKeyCollected = true;
+            });
             
             sequence
             .AppendInterval(0.2f)
