@@ -1,5 +1,6 @@
-using DG.Tweening;
+using System;
 using TMPro;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -23,6 +24,7 @@ public class GameScreenOverlayUI : MonoBehaviour
     [Header("Emoji")]
     [SerializeField] private CanvasGroup _emoji;
 
+    public static event Action RestartLevel;
     private RectTransform _pauseBtnTransform;
 
     private void Awake()
@@ -63,6 +65,8 @@ public class GameScreenOverlayUI : MonoBehaviour
                 () => AudioManager.Instance.PlayUISFX(UISFXType.MouseClick)
             );
 
+        Debug.Log("Game Paused");
+
         OpenOverlayPanel();
     }
 
@@ -87,6 +91,8 @@ public class GameScreenOverlayUI : MonoBehaviour
         {
             Time.timeScale = 1f;
             GameStatsManager.Instance.SetPaused(false);
+
+            Debug.Log("Game Resumed");
             
             AudioManager.Instance.ResumeAudio();
             AmbientLoopAudio.ResumeAll();
@@ -115,11 +121,10 @@ public class GameScreenOverlayUI : MonoBehaviour
             Time.timeScale = 1f;
 
             ContextManager.Instance.IsKeyCollected = false;
-            
             AudioManager.Instance.RestartGamePlayMusic();
-            SceneManager.LoadScene(
-                SceneManager.GetActiveScene().buildIndex
-            );
+            
+            Debug.Log("Game Re-started");
+            RestartLevel?.Invoke();
         });
     } 
 
@@ -145,8 +150,9 @@ public class GameScreenOverlayUI : MonoBehaviour
             Time.timeScale = 1f;
 
             ContextManager.Instance.IsKeyCollected = false;
-
             AudioManager.Instance.CrossFadeToMenuMusic();
+
+            Debug.Log("Game Terminated");
             SceneManager.LoadScene("Levels Map");
         });
     }

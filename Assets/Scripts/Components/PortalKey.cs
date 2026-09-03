@@ -26,9 +26,15 @@ public class PortalKey : MonoBehaviour
             
             sequence
             .AppendInterval(0.2f)
-            .OnComplete(
-                () => Destroy(gameObject)
+            .OnComplete(() => 
+                gameObject.SetActive(false)
             );
         }
+    }
+
+    public void DeactivateExitPortal()
+    {
+        if (_exitPortal.activeInHierarchy)
+            _exitPortal.SetActive(false);
     }
 }

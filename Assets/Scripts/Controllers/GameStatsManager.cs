@@ -44,6 +44,7 @@ public class GameStatsManager : MonoBehaviour
         Gem.OnGemCollected += HandleGemCollected;
         DamageController.OnHealthChanged += HandleHealthChanged;
         DamageController.OnPlayerRevived += HandleRevives;
+        GameScreenOverlayUI.RestartLevel += ResetStatsOnRestart;
     }
 
     private void OnDisable()
@@ -51,6 +52,7 @@ public class GameStatsManager : MonoBehaviour
         Gem.OnGemCollected -= HandleGemCollected;
         DamageController.OnHealthChanged -= HandleHealthChanged;
         DamageController.OnPlayerRevived -= HandleRevives;
+        GameScreenOverlayUI.RestartLevel -= ResetStatsOnRestart;
     }
 
     private void Update()
@@ -96,6 +98,17 @@ public class GameStatsManager : MonoBehaviour
     private void ResetStats()
     {
         _gemsCollected = 0;
+        _healthPercent = 100f;
+        _revives = 0;
+        _elapsedTime = 0f;
+        _completionTime = 0f;
+        _levelCompleted = false;
+    }
+
+    private void ResetStatsOnRestart()
+    {
+        _gemsCollected = 0;
+        OnGemsChanged?.Invoke(_gemsCollected);
         _healthPercent = 100f;
         _revives = 0;
         _elapsedTime = 0f;

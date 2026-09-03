@@ -24,6 +24,16 @@ public class Checkpoint : MonoBehaviour
         _spriteRenderer.sprite = inactiveSprite;
     }
 
+    private void OnEnable()
+    {
+        GameScreenOverlayUI.RestartLevel += DeActivateCheckpoint;
+    }
+
+    private void OnDisable()
+    {
+        GameScreenOverlayUI.RestartLevel -= DeActivateCheckpoint;
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (_isActivated || !other.CompareTag("Player")) 
@@ -72,5 +82,25 @@ public class Checkpoint : MonoBehaviour
                 0.45f
             )
         );
+    }
+
+    private void DeActivateCheckpoint()
+    {
+        if (!_isActivated) return;
+
+        checkpointLight.intensity = 0f;
+
+        transform.localScale = new Vector3(
+            0.6826329f, 
+            0.6826329f, 
+            0.6826329f
+        );
+       
+        _spriteRenderer.sprite = inactiveSprite;
+       
+        _key.GetComponent<PortalKey>().DeactivateExitPortal();
+        _key.SetActive(false);
+        
+        _isActivated = false;
     }
 }

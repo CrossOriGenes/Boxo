@@ -16,7 +16,7 @@ public class Gem : MonoBehaviour
 
             OnGemCollected?.Invoke();
             
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

@@ -22,6 +22,7 @@ public class DamageController : MonoBehaviour
 
     private GameObject _player;
     private Vector3 _respawnPosition;
+    private Vector3 _playerStartingPos;
     private SpriteRenderer _visualRenderer;
     private HealthBar _healthBarController;
     private const float MAX_HEALTH = 100f;
@@ -30,10 +31,21 @@ public class DamageController : MonoBehaviour
     public static event Action<float> OnHealthChanged;
     public static event Action OnPlayerRevived;
 
+    private void OnEnable()
+    {
+        GameScreenOverlayUI.RestartLevel += HandleLevelRestart;
+    }
+
+    private void OnDisable()
+    {
+        GameScreenOverlayUI.RestartLevel -= HandleLevelRestart;
+    }
+
     private void Awake()
     {
         _player = transform.root.gameObject;
-        _respawnPosition = _player.transform.position;
+        _playerStartingPos = _player.transform.position;
+        _respawnPosition = _playerStartingPos;
         _visualRenderer = _visual.GetComponent<SpriteRenderer>();
         _healthBarController = _healthBar.GetComponent<HealthBar>();
         _currentHealth = MAX_HEALTH;
@@ -138,5 +150,38 @@ public class DamageController : MonoBehaviour
         _healthBarController.ResetHealthBar();
         OnHealthChanged?.Invoke(GetHealthPercent());
         FaceChanger(_happyMood);
+    }
+
+    private void HandleLevelRestart()
+    {
+        _player.transform.position = _playerStartingPos;
+        _playerController.enabled = false;
+        _groundCheck.SetActive(false);
+        _sideCheck.SetActive(false);
+        _trail.emitting = false;
+        _visual.SetActive(false);
+        _healthBar.SetActive(false);
+        _rb.linearVelocity = Vector2.zero;
+        _rb.simulated = false;
+        StartCoroutine(RestartLevel());
+    }
+    private IEnumerator RestartLevel()
+    {
+        yield return new WaitForSeconds(.7f);
+        _respawnPosition = _playerStartingPos;
+        _rb.simulated = true;
+        _rb.linearVelocity = Vector2.zero;
+        _rb.angularVelocity = 0f;
+        _trail.Clear();
+        _visual.SetActive(true);
+        _healthBar.SetActive(true);
+        _currentHealth = MAX_HEALTH;
+        _healthBarController.ResetHealthBar();
+        FaceChanger(_happyMood);
+        _trail.emitting = true;
+        _groundCheck.SetActive(true);
+        _sideCheck.SetActive(true);
+        _playerController.ResetMovement();
+        _playerController.enabled = true;
     }
 }
