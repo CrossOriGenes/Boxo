@@ -118,7 +118,14 @@ public class HomeScreenController : MonoBehaviour
             () => AudioManager.Instance.PlayUISFX(UISFXType.MouseClick)
         )
         .OnComplete(
-            () => SceneManager.LoadScene("Levels Map")
+            () => SceneTransitionUI.Instance.PlayClose(
+                    "Levels Map",
+                    new string[]
+                    {
+                        "Loading levels...",
+                        "Getting your unlocked levels..."
+                    }
+            )
         );
     }
 
@@ -183,7 +190,14 @@ public class HomeScreenController : MonoBehaviour
             () => AudioManager.Instance.PlayUISFX(UISFXType.MouseClick)
         )
         .OnComplete(
-            () => SceneManager.LoadScene("Levels Map")
+            () => SceneTransitionUI.Instance.PlayClose(
+                    "Levels Map",
+                    new string[]
+                    {
+                        "Loading levels...",
+                        "Getting your unlocked levels..."
+                    }
+            )
         );
     }
 

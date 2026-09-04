@@ -23,9 +23,6 @@ public class LevelCompletedUI : MonoBehaviour
     [Header("Button")]
     [SerializeField] private RectTransform confirmButton;
 
-    [Header("Scene Closer")]
-    [SerializeField] private SceneTransitionUI _sceneTransitUI;
-
     private CanvasGroup _canvasGroup;
     private LevelConfig _config;
     
@@ -236,7 +233,15 @@ public class LevelCompletedUI : MonoBehaviour
             _canvasGroup.interactable = false;
             _canvasGroup.blocksRaycasts = false;
         
-            _sceneTransitUI.PlayClose();
+            SceneTransitionUI.Instance.PlayClose(
+                "Levels Map",
+                new string[]
+                {
+                    "Saving your progress...",
+                    "Loading Rewards...",
+                    "Returning to Levels Map..."
+                }
+            );
 
             AudioManager.Instance.PauseAudio();
         });

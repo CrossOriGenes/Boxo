@@ -121,8 +121,10 @@ public class GameScreenOverlayUI : MonoBehaviour
             Time.timeScale = 1f;
 
             ContextManager.Instance.IsKeyCollected = false;
+
             AudioManager.Instance.RestartGamePlayMusic();
-            
+            AmbientLoopAudio.RestartAll();
+
             Debug.Log("Game Re-started");
             RestartLevel?.Invoke();
         });
@@ -153,7 +155,14 @@ public class GameScreenOverlayUI : MonoBehaviour
             AudioManager.Instance.CrossFadeToMenuMusic();
 
             Debug.Log("Game Terminated");
-            SceneManager.LoadScene("Levels Map");
+            SceneTransitionUI.Instance.PlayClose(
+                "Levels Map",
+                new string[]
+                {
+                    "Saving your stats...",
+                    "Quitting..."
+                }
+            );
         });
     }
 

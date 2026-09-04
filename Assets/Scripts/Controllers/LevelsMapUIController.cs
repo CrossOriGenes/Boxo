@@ -112,7 +112,8 @@ public class LevelsMapUIController : MonoBehaviour
 
     private void HandleKeyClaimOverlay()
     {   
-        if (!ContextManager.Instance.IsKeyCollected) return;
+        if (!ContextManager.Instance.IsKeyCollected) 
+            return;
 
         OpenNextLevelKeyClaimOverlay();
     }

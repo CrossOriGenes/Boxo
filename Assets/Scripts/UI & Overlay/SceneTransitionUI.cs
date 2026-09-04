@@ -28,6 +28,8 @@ public class SceneTransitionUI : MonoBehaviour
     public static SceneTransitionUI Instance { get; private set; }
     public static event Action OnTransitionOpened;
     private bool _canPlayOpen;
+    private string _destinationScene;
+    private string[] _loadingMessages;
 
     private void Awake()
     {
@@ -40,6 +42,8 @@ public class SceneTransitionUI : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
 
+        SceneManager.sceneLoaded += OnSceneLoaded;
+
         _leftDoorPos.anchoredPosition = _leftDoorOpenPosition;
         _rightDoorPos.anchoredPosition = _rightDoorOpenPosition;
         _loadingText.text = "";
@@ -48,8 +52,22 @@ public class SceneTransitionUI : MonoBehaviour
         _loadingContentWrapper.SetActive(false);
     }
 
-    public void PlayClose()
+    private void OnDestroy()
     {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    public void PlayClose(
+        string destinationScene,
+        string[] loadingMessages
+    )
+    {
+        if (string.IsNullOrEmpty(destinationScene))
+            return;
+
+        _destinationScene = destinationScene;
+        _loadingMessages = loadingMessages;
+
         Sequence loadingSequence = 
             DOTween.Sequence()
             .SetUpdate(true);
@@ -75,8 +93,15 @@ public class SceneTransitionUI : MonoBehaviour
     private void PlayLoading()
     {
         _loadingContentWrapper.SetActive(true);
-        _loadingText.text = "Collecting your current stats...";
+        
+        _loadingBarFill.fillAmount = 0f;
         _progressValue.text = "0%";
+
+        if (_loadingMessages != null &&
+        _loadingMessages.Length > 0)
+            _loadingText.text = _loadingMessages[0];
+        else
+            _loadingText.text = "";
 
         Sequence loadingSequence = 
             DOTween
@@ -93,27 +118,52 @@ public class SceneTransitionUI : MonoBehaviour
                     float percentage = _loadingBarFill.fillAmount * 100;
                     _progressValue.text = $"{percentage:0}%";
                 })
-            )
-            .InsertCallback(1.3f, () =>
-            {
-                _loadingText.text = "Loading Rewards...";
-            })
-            .InsertCallback(2.6f, () =>
-            {
-                _loadingText.text = "Preparing your next level...";
-            })
-            .OnComplete(() =>
-            {
-                Debug.Log("Loading Completed"); 
+            );
 
-                SceneManager.LoadScene("Levels Map");
+        if (_loadingMessages != null &&
+            _loadingMessages.Length > 1)
+        {
+            loadingSequence.InsertCallback(
+                _loadingDuration / 3f,
+                () =>
+                {
+                    _loadingText.text = _loadingMessages[1];
+                }    
+            );
+        }
+            
+        if (_loadingMessages != null &&
+            _loadingMessages.Length > 2)
+        {
+            loadingSequence.InsertCallback(
+                (_loadingDuration / 3f) * 2f,
+                () =>
+                {
+                    _loadingText.text = _loadingMessages[2];
+                }    
+            );
+        }
+            
+        loadingSequence.OnComplete(() =>
+            {
+                Debug.Log($"Loaded to -> {_destinationScene}"); 
+                SceneManager.LoadScene(_destinationScene);
                 Time.timeScale = 1f;
-            });
+            }
+        );
     }
 
-    public void PlayOpen()
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (!_canPlayOpen) return;
+
+        PlayOpen();
+    }
+
+    private void PlayOpen()
+    {
+        if (!_canPlayOpen) return;
+
         _canPlayOpen = false;
 
         _loadingContentWrapper.SetActive(false);

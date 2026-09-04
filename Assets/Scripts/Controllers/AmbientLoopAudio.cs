@@ -132,6 +132,32 @@ public class AmbientLoopAudio : MonoBehaviour
         }
     }
 
+    public void Restart()
+    {
+        _volumeTween?.Kill();
+
+        if (_audioSource != null)
+        {
+            _audioSource.Stop();
+            _audioSource.volume = 0f;
+        }
+
+        _isPlaying = false;
+        _isFadingOut = false;
+        _isPaused = false;
+        _wasPlayingBeforePause = false;
+        _currentTargetVolume = -1f;
+    }
+
+    public static void RestartAll()
+    {
+        foreach (AmbientLoopAudio ambient in _instances)
+        {
+            if (ambient != null)
+                ambient.Restart();
+        }
+    }
+
 
     /* ---------------------------
     ** VOLUME INTENSITY CALCULATION

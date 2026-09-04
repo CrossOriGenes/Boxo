@@ -34,11 +34,8 @@ public class LevelsMapSceneController : MonoBehaviour
     {
         UpdateKeysUI();
         InitializeUnlockedLevels();
-
-        if (SceneTransitionUI.Instance != null)
-            SceneTransitionUI.Instance.PlayOpen();
-        
         _playLvlBtn.SetActive(false);
+        ContextManager.Instance.ResetKeysClaimed();
     }
 
     private void InitializeUnlockedLevels()
@@ -190,7 +187,16 @@ public class LevelsMapSceneController : MonoBehaviour
             string levelName = $"Level {_selectedLevel}";
             
             AudioManager.Instance.CrossFadeToGameplayMusic();
-            SceneManager.LoadScene(levelName);
+            SceneTransitionUI.Instance.PlayClose(
+                levelName,
+                new string[]
+                {
+                    "Preparing your level...",
+                    "Loading gameplay...",
+                    "Get ready!"
+                }
+            );
+            AudioManager.Instance.PauseAudio();
         });
     }
 }
