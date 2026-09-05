@@ -19,6 +19,7 @@ public class LevelExitPortal : MonoBehaviour
     private void Awake()
     {
         _portalSprite = GetComponent<SpriteRenderer>();
+        gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

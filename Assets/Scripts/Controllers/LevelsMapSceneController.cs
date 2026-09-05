@@ -35,7 +35,6 @@ public class LevelsMapSceneController : MonoBehaviour
         UpdateKeysUI();
         InitializeUnlockedLevels();
         _playLvlBtn.SetActive(false);
-        ContextManager.Instance.ResetKeysClaimed();
     }
 
     private void InitializeUnlockedLevels()

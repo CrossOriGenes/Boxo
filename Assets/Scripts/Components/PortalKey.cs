@@ -6,6 +6,11 @@ public class PortalKey : MonoBehaviour
     [Header("Exit Teleport")]
     [SerializeField] private GameObject _exitPortal;
 
+    private void Awake()
+    {
+        transform.parent.gameObject.SetActive(false);
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -27,7 +32,7 @@ public class PortalKey : MonoBehaviour
             sequence
             .AppendInterval(0.2f)
             .OnComplete(() => 
-                gameObject.SetActive(false)
+                transform.parent.gameObject.SetActive(false)
             );
         }
     }

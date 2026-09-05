@@ -27,6 +27,7 @@ public class DamageController : MonoBehaviour
     private HealthBar _healthBarController;
     private const float MAX_HEALTH = 100f;
     private float _currentHealth;
+    public float CurrentHealth => _currentHealth;
     public static float GetMaxHealth => MAX_HEALTH;
     public static event Action<float> OnHealthChanged;
     public static event Action OnPlayerRevived;

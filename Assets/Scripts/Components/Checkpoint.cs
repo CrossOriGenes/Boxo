@@ -98,7 +98,9 @@ public class Checkpoint : MonoBehaviour
        
         _spriteRenderer.sprite = inactiveSprite;
        
-        _key.GetComponent<PortalKey>().DeactivateExitPortal();
+        _key
+            .GetComponentInChildren<PortalKey>()
+            .DeactivateExitPortal();
         _key.SetActive(false);
         
         _isActivated = false;
