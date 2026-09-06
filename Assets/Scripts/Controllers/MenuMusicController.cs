@@ -4,6 +4,7 @@ public class MenuMusicController : MonoBehaviour
 {
     void Start()
     {
-        AudioManager.Instance.PlayMenuMusic();
+        if (!AudioManager.Instance.Halted)
+            AudioManager.Instance.PlayMenuMusic();
     }
 }

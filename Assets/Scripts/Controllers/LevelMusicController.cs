@@ -4,6 +4,7 @@ public class LevelMusicController : MonoBehaviour
 {
     void Start()
     {
-        AudioManager.Instance.PlayGamePlayMusic();
+        if (!AudioManager.Instance.Halted)
+            AudioManager.Instance.CrossFadeToGameplayMusic();
     }
 }

@@ -184,8 +184,9 @@ public class LevelsMapSceneController : MonoBehaviour
         .OnComplete(() =>
         {
             string levelName = $"Level {_selectedLevel}";
+
+            AudioManager.Instance.StopMusic();
             
-            AudioManager.Instance.CrossFadeToGameplayMusic();
             SceneTransitionUI.Instance.PlayClose(
                 levelName,
                 new string[]
@@ -195,7 +196,6 @@ public class LevelsMapSceneController : MonoBehaviour
                     "Get ready!"
                 }
             );
-            AudioManager.Instance.PauseAudio();
         });
     }
 }

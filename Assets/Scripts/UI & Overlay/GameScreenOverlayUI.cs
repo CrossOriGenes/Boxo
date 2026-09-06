@@ -3,7 +3,6 @@ using TMPro;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class GameScreenOverlayUI : MonoBehaviour
 {
@@ -152,9 +151,11 @@ public class GameScreenOverlayUI : MonoBehaviour
             Time.timeScale = 1f;
 
             ContextManager.Instance.IsKeyCollected = false;
-            AudioManager.Instance.CrossFadeToMenuMusic();
-
+            
             Debug.Log("Game Terminated");
+
+            AudioManager.Instance.StopMusic();
+
             SceneTransitionUI.Instance.PlayClose(
                 "Levels Map",
                 new string[]

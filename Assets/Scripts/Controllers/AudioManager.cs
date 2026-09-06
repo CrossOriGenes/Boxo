@@ -76,6 +76,12 @@ public class AudioManager : MonoBehaviour
     private Dictionary<SFXType, SFXData> _sfxDictionary;
     private Dictionary<UISFXType, UISFXData> _uiSfxDictionary;
     private Tween _musicTween;
+    private bool _isHalted;
+    public bool Halted
+    {
+        get => _isHalted;
+        set => _isHalted = value;
+    }
 
     private void Awake()
     {
@@ -231,6 +237,7 @@ public class AudioManager : MonoBehaviour
 
     public void StopMusic()
     {
+        Halted = true;
         _musicTween?.Kill();
         _musicSource.Stop();
     }
@@ -311,12 +318,14 @@ public class AudioManager : MonoBehaviour
     * -------------------------------- */
     public void PauseAudio()
     {
+        Halted = true;
         _musicSource.Pause();
         _sfxSource.Pause();
     }
 
     public void ResumeAudio()
     {
+        Halted = false;
         _musicSource.UnPause();
         _sfxSource.UnPause();
     }

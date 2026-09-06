@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f279b777350b4446489616fcac6802d7, type: 3}
-  m_Name: Level_02_Config
+  m_Name: Level_03_Config
   m_EditorClassIdentifier: Assembly-CSharp::LevelConfig
-  levelId: Level_02
-  levelName: Level 2
-  scoringProfile: {fileID: 11400000, guid: 1b2ee681a3c0649088d291a9912cadc7, type: 2}
-  totalGems: 5
+  levelId: Level_03
+  levelName: Level 3
+  scoringProfile: {fileID: 11400000, guid: 7ad22d48e3ddd445d9ff6f9058830554, type: 2}
+  totalGems: 8

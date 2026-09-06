@@ -147,6 +147,8 @@ public class SceneTransitionUI : MonoBehaviour
         loadingSequence.OnComplete(() =>
             {
                 Debug.Log($"Loaded to -> {_destinationScene}"); 
+                AudioManager.Instance.Halted = false;
+                
                 SceneManager.LoadScene(_destinationScene);
                 Time.timeScale = 1f;
             }

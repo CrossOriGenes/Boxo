@@ -10,7 +10,7 @@ EditorBuildSettings:
     guid: fcc340d01b33447e39e2a6e1722c6089
   - enabled: 1
     path: Assets/Scenes/Home Screen.unity
-    guid: 52099722ef10649e4966b8723b2734ac
+    guid: 5efe9f970804840bfb7b321ce142509a
   - enabled: 1
     path: Assets/Scenes/Levels Map.unity
     guid: c542645f7eebf418e945a10814d6dad9
@@ -19,6 +19,9 @@ EditorBuildSettings:
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
     path: Assets/Scenes/Level 2.unity
+    guid: 581ffd92a0bd644c7b667e8ef03688cd
+  - enabled: 1
+    path: Assets/Scenes/Level 3.unity
     guid: dfcd8291e794f4db8b3652b33d592836
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 35ed9df36049347d0ba02df9dea05639, type: 3}
