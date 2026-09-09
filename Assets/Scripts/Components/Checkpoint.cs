@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using DG.Tweening;
@@ -15,6 +16,8 @@ public class Checkpoint : MonoBehaviour
     [Header("Next Level Key")]
     [SerializeField] private GameObject _key;
 
+    public static event Action CheckpointCrossed;
+    public static event Action DeActivateThisFromOtherPoint;
     private SpriteRenderer _spriteRenderer;
     private bool _isActivated;
 
@@ -50,6 +53,8 @@ public class Checkpoint : MonoBehaviour
         );
 
         _key.SetActive(true);
+
+        CheckpointCrossed?.Invoke();
 
         ActivateCheckpoint();
     }
@@ -104,5 +109,7 @@ public class Checkpoint : MonoBehaviour
         _key.SetActive(false);
         
         _isActivated = false;
+
+        DeActivateThisFromOtherPoint?.Invoke();
     }
 }

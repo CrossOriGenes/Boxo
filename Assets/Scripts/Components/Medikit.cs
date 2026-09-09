@@ -55,7 +55,13 @@ public class Medikit : MonoBehaviour
         });
 
         sequence.OnComplete(() =>
-            Destroy(gameObject)
+            gameObject.SetActive(false)
         );
+    }
+
+    public void ReActivate()
+    {
+        _visual.SetActive(true);
+        gameObject.SetActive(true);
     }
 }
