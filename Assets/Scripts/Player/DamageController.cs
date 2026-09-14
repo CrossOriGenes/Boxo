@@ -25,6 +25,8 @@ public class DamageController : MonoBehaviour
     private Vector3 _playerStartingPos;
     private SpriteRenderer _visualRenderer;
     private HealthBar _healthBarController;
+    private Tween _fullDamageTween;
+    private bool _isTakingFullDamage;
     private const float MAX_HEALTH = 100f;
     private float _currentHealth;
     public float CurrentHealth => _currentHealth;
@@ -72,6 +74,63 @@ public class DamageController : MonoBehaviour
             Die();
         else
             AudioManager.Instance.PlaySFX(SFXType.Damage);
+    }
+
+    public void TakeFullDamage(float duration = 1.5f)
+    {
+        if (_isTakingFullDamage)
+            return;
+
+        _isTakingFullDamage = true;
+        _fullDamageTween?.Kill();
+        Sprite currentMood = _visualRenderer.sprite;
+        _fullDamageTween = 
+            DOTween.To(
+                () => _currentHealth,
+                value =>
+                {
+                    _currentHealth = value;
+                    _healthBarController.UpdateHealthBarImmediate(
+                        _currentHealth, 
+                        MAX_HEALTH
+                    );
+
+                    Sprite targetMood;
+                    if (_currentHealth <= 33.3f)
+                        targetMood = _sadMood;
+                    else if (_currentHealth < 66.6f)
+                        targetMood = _noFeelingsMood;
+                    else
+                        targetMood = _sadMood;
+                    
+                    if (targetMood != currentMood)
+                    {
+                        currentMood = targetMood;
+                        FaceChanger(targetMood);
+                    }
+                    OnHealthChanged?.Invoke(GetHealthPercent());
+                },
+                0f,
+                duration
+            )
+            .SetEase(Ease.InOutSine)
+            .OnComplete(() =>
+            {
+                _currentHealth = 0f;
+                _healthBarController.UpdateHealthBarImmediate(
+                    _currentHealth, 
+                    MAX_HEALTH
+                );
+                if (_visualRenderer.sprite != _sadMood)
+                    FaceChanger(_sadMood);
+
+                OnHealthChanged?.Invoke(GetHealthPercent());
+
+                _isTakingFullDamage = false;
+                _fullDamageTween = null;
+
+                Die();
+            });
     }
 
     private void Die()

@@ -18,7 +18,7 @@ public class Medikit : MonoBehaviour
         _damageController = other.GetComponentInChildren<DamageController>();
         
         if (_damageController != null)
-            if (_damageController.CurrentHealth < 50f)
+            if (_damageController.CurrentHealth < 60f)
                 PlayHealthGainAnimation();
     }
 

@@ -26,6 +26,16 @@ public class HealthBar : MonoBehaviour
         _colorTween = _fill.DOColor(targetColor, 0.5f);
     }
 
+    public void UpdateHealthBarImmediate(
+        float currentLives, 
+        float maxLives)
+    {
+        float healthPercentage = Mathf.Clamp01(currentLives / maxLives);
+
+        _fill.fillAmount = healthPercentage;
+        _fill.color = GetHealthBarColor(healthPercentage);
+    }
+
     private Color GetHealthBarColor(float health)
     {
         if (health > 0.5f)

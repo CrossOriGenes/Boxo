@@ -1489,7 +1489,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7748922075345586602, guid: 260d44c32199b424996822ff0796475e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -21.230068
+      value: -21.187218
       objectReference: {fileID: 0}
     - target: {fileID: 7748922075345586602, guid: 260d44c32199b424996822ff0796475e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -23741,6 +23741,10 @@ PrefabInstance:
       propertyPath: _playerFollowCam
       value: 
       objectReference: {fileID: 565184499}
+    - target: {fileID: 301031532154533305, guid: 605beaed08f7d4a24b90c5328351e4c4, type: 3}
+      propertyPath: _confinerColliders.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 301031532154533305, guid: 605beaed08f7d4a24b90c5328351e4c4, type: 3}
       propertyPath: '_confinerColliders.Array.data[0]'
       value: 

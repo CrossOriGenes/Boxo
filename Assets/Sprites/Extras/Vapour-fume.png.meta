@@ -1,0 +1,2028 @@
+fileFormatVersion: 2
+guid: 213f3a317565844068577ea13a31b7da
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4129372166626566027
+    second: Vapour-fume_0
+  - first:
+      213: 1702136597452575386
+    second: Vapour-fume_1
+  - first:
+      213: -5667398879099001759
+    second: Vapour-fume_2
+  - first:
+      213: 367963870844328306
+    second: Vapour-fume_3
+  - first:
+      213: -1703581894119098245
+    second: Vapour-fume_4
+  - first:
+      213: 7349723608355296054
+    second: Vapour-fume_5
+  - first:
+      213: 2005671998387860037
+    second: Vapour-fume_6
+  - first:
+      213: 1887700896773706940
+    second: Vapour-fume_7
+  - first:
+      213: 7590548933887132341
+    second: Vapour-fume_8
+  - first:
+      213: -8153321432477046121
+    second: Vapour-fume_9
+  - first:
+      213: 3561741720873433981
+    second: Vapour-fume_10
+  - first:
+      213: -386288681971846424
+    second: Vapour-fume_11
+  - first:
+      213: -5285358603568693518
+    second: Vapour-fume_12
+  - first:
+      213: 6337437362292668289
+    second: Vapour-fume_13
+  - first:
+      213: 2235624701139683586
+    second: Vapour-fume_14
+  - first:
+      213: -5011030771511311307
+    second: Vapour-fume_15
+  - first:
+      213: -6029404131467489160
+    second: Vapour-fume_16
+  - first:
+      213: -645113766673498355
+    second: Vapour-fume_17
+  - first:
+      213: -260077873544892822
+    second: Vapour-fume_18
+  - first:
+      213: 5680603818296072818
+    second: Vapour-fume_19
+  - first:
+      213: 2915743022172880805
+    second: Vapour-fume_20
+  - first:
+      213: 7189869946826583745
+    second: Vapour-fume_21
+  - first:
+      213: 7040574992038058414
+    second: Vapour-fume_22
+  - first:
+      213: 3753193996899080197
+    second: Vapour-fume_23
+  - first:
+      213: -7221537122424922994
+    second: Vapour-fume_24
+  - first:
+      213: -4184640854927487968
+    second: Vapour-fume_25
+  - first:
+      213: 3108277108450434376
+    second: Vapour-fume_26
+  - first:
+      213: 2253829095326520637
+    second: Vapour-fume_27
+  - first:
+      213: -3665905872279612520
+    second: Vapour-fume_28
+  - first:
+      213: 915677700616997056
+    second: Vapour-fume_29
+  - first:
+      213: -8216721406855350918
+    second: Vapour-fume_30
+  - first:
+      213: 4190247568634107103
+    second: Vapour-fume_31
+  - first:
+      213: 3822549664955431154
+    second: Vapour-fume_32
+  - first:
+      213: -2471876587208381514
+    second: Vapour-fume_33
+  - first:
+      213: 1004826650190727710
+    second: Vapour-fume_34
+  - first:
+      213: 1710765958072599989
+    second: Vapour-fume_35
+  - first:
+      213: 3869707194558340812
+    second: Vapour-fume_36
+  - first:
+      213: 5417532699193080195
+    second: Vapour-fume_37
+  - first:
+      213: 16662318889254190
+    second: Vapour-fume_38
+  - first:
+      213: -7735564477997641406
+    second: Vapour-fume_39
+  - first:
+      213: 4209389086059754924
+    second: Vapour-fume_40
+  - first:
+      213: 7740127357501180737
+    second: Vapour-fume_41
+  - first:
+      213: 1039886177225358717
+    second: Vapour-fume_42
+  - first:
+      213: 1986589104103951798
+    second: Vapour-fume_43
+  - first:
+      213: -7562488578319496438
+    second: Vapour-fume_44
+  - first:
+      213: 4037432844710636284
+    second: Vapour-fume_45
+  - first:
+      213: -6585180373882793380
+    second: Vapour-fume_46
+  - first:
+      213: -2380181513962773475
+    second: Vapour-fume_47
+  - first:
+      213: -1057251153452619149
+    second: Vapour-fume_48
+  - first:
+      213: 1885993117549792239
+    second: Vapour-fume_49
+  - first:
+      213: -1539613988127938200
+    second: Vapour-fume_50
+  - first:
+      213: 2185242802572140417
+    second: Vapour-fume_51
+  - first:
+      213: -3654108258014473234
+    second: Vapour-fume_52
+  - first:
+      213: -2778336323699096990
+    second: Vapour-fume_53
+  - first:
+      213: -6851534096094621735
+    second: Vapour-fume_54
+  - first:
+      213: -3433498442853874006
+    second: Vapour-fume_55
+  - first:
+      213: 2825585266261170787
+    second: Vapour-fume_56
+  - first:
+      213: -8306742462237448934
+    second: Vapour-fume_57
+  - first:
+      213: -4081008223472909180
+    second: Vapour-fume_58
+  - first:
+      213: 4758973044504746701
+    second: Vapour-fume_59
+  - first:
+      213: 5846356809581851715
+    second: Vapour-fume_60
+  - first:
+      213: -3151360028374299029
+    second: Vapour-fume_61
+  - first:
+      213: -8660668583762548898
+    second: Vapour-fume_62
+  - first:
+      213: 1831842810561500983
+    second: Vapour-fume_63
+  - first:
+      213: 8782260231519241797
+    second: Vapour-fume_64
+  - first:
+      213: -4117806176164200424
+    second: Vapour-fume_65
+  - first:
+      213: -6029590363296413982
+    second: Vapour-fume_66
+  - first:
+      213: -445793236481027207
+    second: Vapour-fume_67
+  - first:
+      213: -4417539521271754707
+    second: Vapour-fume_68
+  - first:
+      213: -9174133328472697081
+    second: Vapour-fume_69
+  - first:
+      213: 3895433874436029196
+    second: Vapour-fume_70
+  - first:
+      213: -593900870550586168
+    second: Vapour-fume_71
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 590
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Vapour-fume_0
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 297
+        width: 271
+        height: 293
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8f59217b1a7e4930800000000000000
+      internalID: 4129372166626566027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_1
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 583
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a925a5297343f9710800000000000000
+      internalID: 1702136597452575386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_2
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 444
+        width: 22
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1646bd22fba5951b0800000000000000
+      internalID: -5667398879099001759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_3
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 451
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2799ad3e0354b1500800000000000000
+      internalID: 367963870844328306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 403
+        width: 11
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b787e331b49ab58e0800000000000000
+      internalID: -1703581894119098245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_5
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 423
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 633d1596ea67ff560800000000000000
+      internalID: 7349723608355296054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_6
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 435
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5423bd75e0495db10800000000000000
+      internalID: 2005671998387860037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_7
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 415
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb41262d6f5723a10800000000000000
+      internalID: 1887700896773706940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_8
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 408
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b20096f90c075960800000000000000
+      internalID: 7590548933887132341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_9
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 416
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79a60a5fa5599de80800000000000000
+      internalID: -8153321432477046121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_10
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 412
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7b79566939dd6130800000000000000
+      internalID: 3561741720873433981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_11
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 395
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e2705a8d70a3aaf0800000000000000
+      internalID: -386288681971846424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_12
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 402
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2febbb36a52a6a6b0800000000000000
+      internalID: -5285358603568693518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_13
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 406
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1873ebd24b913f750800000000000000
+      internalID: 6337437362292668289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_14
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 400
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 209058222d8860f10800000000000000
+      internalID: 2235624701139683586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_15
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 391
+        width: 9
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5344489101e357ab0800000000000000
+      internalID: -5011030771511311307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_16
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 270
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8709b9833e0435ca0800000000000000
+      internalID: -6029404131467489160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_17
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 293
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0f36b972781c07f0800000000000000
+      internalID: -645113766673498355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_18
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 296
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6eea6d4d84046cf0800000000000000
+      internalID: -260077873544892822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_19
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 286
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27ad34b531f85de40800000000000000
+      internalID: 5680603818296072818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_20
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 216
+        width: 156
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5af30f494dcc67820800000000000000
+      internalID: 2915743022172880805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_21
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 296
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ceead18f9c87c360800000000000000
+      internalID: 7189869946826583745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_22
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 289
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea95de617a525b160800000000000000
+      internalID: 7040574992038058414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_23
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 296
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5085c4e0e06061430800000000000000
+      internalID: 3753193996899080197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_24
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 288
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8cd09d9f32f7cb90800000000000000
+      internalID: -7221537122424922994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_25
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 275
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02cc579405b2de5c0800000000000000
+      internalID: -4184640854927487968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_26
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 281
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84d9aa0df81d22b20800000000000000
+      internalID: 3108277108450434376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_27
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 109
+        width: 173
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d359063fe95374f10800000000000000
+      internalID: 2253829095326520637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_28
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 235
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89351ce2806102dc0800000000000000
+      internalID: -3665905872279612520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_29
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 244
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c8c50a640425bc00800000000000000
+      internalID: 915677700616997056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_30
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 228
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a75f90e1a6758fd80800000000000000
+      internalID: -8216721406855350918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_31
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 208
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd4516976ffb62a30800000000000000
+      internalID: 4190247568634107103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_32
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 184
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f8f4f3eaac6c0530800000000000000
+      internalID: 3822549664955431154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_33
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 211
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bbe6da275122bdd0800000000000000
+      internalID: -2471876587208381514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_34
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 176
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1ac679b38cd1fd00800000000000000
+      internalID: 1004826650190727710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_35
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 189
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b58fb8239cddb710800000000000000
+      internalID: 1710765958072599989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_36
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 178
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cce5c6cd036f3b530800000000000000
+      internalID: 3869707194558340812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_37
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 174
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 389777e5941fe2b40800000000000000
+      internalID: 5417532699193080195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_38
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 162
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2d378e6a423b3000800000000000000
+      internalID: 16662318889254190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_39
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 167
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24112df8711c5a490800000000000000
+      internalID: -7735564477997641406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_40
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 111
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca57ffb4211ca6a30800000000000000
+      internalID: 4209389086059754924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_41
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 107
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14b042c92d47a6b60800000000000000
+      internalID: 7740127357501180737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_42
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 108
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7d3b58f7fa6e6e00800000000000000
+      internalID: 1039886177225358717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_43
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 91
+        width: 22
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bd07c8c348c19b10800000000000000
+      internalID: 1986589104103951798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_44
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 93
+        width: 25
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0b415fa4b4ac0790800000000000000
+      internalID: -7562488578319496438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_45
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 111
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfae871f7c7d70830800000000000000
+      internalID: 4037432844710636284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_46
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 106
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5297d8f65dbc94a0800000000000000
+      internalID: -6585180373882793380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_47
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 113
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d142c471685e7fed0800000000000000
+      internalID: -2380181513962773475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_48
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 92
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37aa5107da3e351f0800000000000000
+      internalID: -1057251153452619149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_49
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 102
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: feb036c7fb46c2a10800000000000000
+      internalID: 1885993117549792239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_50
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 73
+        width: 42
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 869696a2c3132aae0800000000000000
+      internalID: -1539613988127938200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_51
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 85
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18f9a4340ca835e10800000000000000
+      internalID: 2185242802572140417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_52
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 61
+        width: 44
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee3d93e46eff94dc0800000000000000
+      internalID: -3654108258014473234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_53
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 88
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 262c95775dd5179d0800000000000000
+      internalID: -2778336323699096990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_54
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 82
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9df8dc36a067ae0a0800000000000000
+      internalID: -6851534096094621735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_55
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 71
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa686d09b53c950d0800000000000000
+      internalID: -3433498442853874006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_56
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 78
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36a131e34de763720800000000000000
+      internalID: 2825585266261170787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_57
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 54
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a15eea9ddb588bc80800000000000000
+      internalID: -8306742462237448934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_58
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 0
+        width: 66
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 484037294a85d57c0800000000000000
+      internalID: -4081008223472909180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_59
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 61
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dca5d5515c44b0240800000000000000
+      internalID: 4758973044504746701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_60
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 68
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 344ff410b8e622150800000000000000
+      internalID: 5846356809581851715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_61
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 60
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6e826530ce1444d0800000000000000
+      internalID: -3151360028374299029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_62
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 59
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e57a27b2fcf1fc780800000000000000
+      internalID: -8660668583762548898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_63
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 12
+        width: 17
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7371fd7a4530c6910800000000000000
+      internalID: 1831842810561500983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_64
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 24
+        width: 13
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5468eb0762bd0e970800000000000000
+      internalID: 8782260231519241797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_65
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 39
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 810c2df891d9ad6c0800000000000000
+      internalID: -4117806176164200424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_66
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 10
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e6499eb287925ca0800000000000000
+      internalID: -6029590363296413982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_67
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 14
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 973d640d96930d9f0800000000000000
+      internalID: -445793236481027207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_68
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 3
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d201955e53fb1b2c0800000000000000
+      internalID: -4417539521271754707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_69
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 13
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 707105a285eeea080800000000000000
+      internalID: -9174133328472697081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_70
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 2
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0b78cb487c5f0630800000000000000
+      internalID: 3895433874436029196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vapour-fume_71
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 14
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cc790b0e4a02c7f0800000000000000
+      internalID: -593900870550586168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Vapour-fume_0: 4129372166626566027
+      Vapour-fume_1: 1702136597452575386
+      Vapour-fume_10: 3561741720873433981
+      Vapour-fume_11: -386288681971846424
+      Vapour-fume_12: -5285358603568693518
+      Vapour-fume_13: 6337437362292668289
+      Vapour-fume_14: 2235624701139683586
+      Vapour-fume_15: -5011030771511311307
+      Vapour-fume_16: -6029404131467489160
+      Vapour-fume_17: -645113766673498355
+      Vapour-fume_18: -260077873544892822
+      Vapour-fume_19: 5680603818296072818
+      Vapour-fume_2: -5667398879099001759
+      Vapour-fume_20: 2915743022172880805
+      Vapour-fume_21: 7189869946826583745
+      Vapour-fume_22: 7040574992038058414
+      Vapour-fume_23: 3753193996899080197
+      Vapour-fume_24: -7221537122424922994
+      Vapour-fume_25: -4184640854927487968
+      Vapour-fume_26: 3108277108450434376
+      Vapour-fume_27: 2253829095326520637
+      Vapour-fume_28: -3665905872279612520
+      Vapour-fume_29: 915677700616997056
+      Vapour-fume_3: 367963870844328306
+      Vapour-fume_30: -8216721406855350918
+      Vapour-fume_31: 4190247568634107103
+      Vapour-fume_32: 3822549664955431154
+      Vapour-fume_33: -2471876587208381514
+      Vapour-fume_34: 1004826650190727710
+      Vapour-fume_35: 1710765958072599989
+      Vapour-fume_36: 3869707194558340812
+      Vapour-fume_37: 5417532699193080195
+      Vapour-fume_38: 16662318889254190
+      Vapour-fume_39: -7735564477997641406
+      Vapour-fume_4: -1703581894119098245
+      Vapour-fume_40: 4209389086059754924
+      Vapour-fume_41: 7740127357501180737
+      Vapour-fume_42: 1039886177225358717
+      Vapour-fume_43: 1986589104103951798
+      Vapour-fume_44: -7562488578319496438
+      Vapour-fume_45: 4037432844710636284
+      Vapour-fume_46: -6585180373882793380
+      Vapour-fume_47: -2380181513962773475
+      Vapour-fume_48: -1057251153452619149
+      Vapour-fume_49: 1885993117549792239
+      Vapour-fume_5: 7349723608355296054
+      Vapour-fume_50: -1539613988127938200
+      Vapour-fume_51: 2185242802572140417
+      Vapour-fume_52: -3654108258014473234
+      Vapour-fume_53: -2778336323699096990
+      Vapour-fume_54: -6851534096094621735
+      Vapour-fume_55: -3433498442853874006
+      Vapour-fume_56: 2825585266261170787
+      Vapour-fume_57: -8306742462237448934
+      Vapour-fume_58: -4081008223472909180
+      Vapour-fume_59: 4758973044504746701
+      Vapour-fume_6: 2005671998387860037
+      Vapour-fume_60: 5846356809581851715
+      Vapour-fume_61: -3151360028374299029
+      Vapour-fume_62: -8660668583762548898
+      Vapour-fume_63: 1831842810561500983
+      Vapour-fume_64: 8782260231519241797
+      Vapour-fume_65: -4117806176164200424
+      Vapour-fume_66: -6029590363296413982
+      Vapour-fume_67: -445793236481027207
+      Vapour-fume_68: -4417539521271754707
+      Vapour-fume_69: -9174133328472697081
+      Vapour-fume_7: 1887700896773706940
+      Vapour-fume_70: 3895433874436029196
+      Vapour-fume_71: -593900870550586168
+      Vapour-fume_8: 7590548933887132341
+      Vapour-fume_9: -8153321432477046121
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

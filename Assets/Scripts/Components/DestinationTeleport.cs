@@ -7,6 +7,7 @@ public class DestinationTeleport : MonoBehaviour
 {
     [Header("")]
     [SerializeField] private GameObject _player;
+    [SerializeField] private int _sourceIndex = 1;
 
     // Local references
     public static event Action<int> ChangeGameLevelCameraToNewArea;
@@ -29,20 +30,21 @@ public class DestinationTeleport : MonoBehaviour
     private void OnEnable()
     {
         SourceTeleport.Teleported += EndTeleportSequence;
-        GameScreenOverlayUI.RestartLevel += ResetTeleportStatsOnRestart;
     }
 
     private void OnDisable()
     {
         SourceTeleport.Teleported -= EndTeleportSequence;
-        GameScreenOverlayUI.RestartLevel -= ResetTeleportStatsOnRestart;
     }
 
-    private void EndTeleportSequence(int previousAreaIndex)
+    private void EndTeleportSequence(int sourceTeleportIndex)
     {
+        if (sourceTeleportIndex != _sourceIndex) 
+            return;
+
         Sequence _teleportSequence = DOTween.Sequence();
         
-        int targetAreaIndex = ++previousAreaIndex;
+        int targetAreaIndex = ++sourceTeleportIndex;
         ChangeGameLevelCameraToNewArea?.Invoke(targetAreaIndex);  
 
         _teleportSequence
@@ -80,12 +82,6 @@ public class DestinationTeleport : MonoBehaviour
                 _trail.emitting = true;
                 _damageController
                     .SetRespawnPoint(_teleportingPoint.position);
-                    
-                gameObject.transform
-                    .Find("visual")
-                    .GetComponent<SpriteRenderer>()
-                    .DOFade(0f, .35f)
-                    .SetEase(Ease.OutQuad);
             });
     }
     
@@ -98,14 +94,5 @@ public class DestinationTeleport : MonoBehaviour
         _trail = _player.GetComponent<TrailRenderer>();
         _playerLight = _player.GetComponentInChildren<Light2D>();
         _damageController = _player.GetComponentInChildren<DamageController>();
-    }
-
-    private void ResetTeleportStatsOnRestart()
-    {
-        gameObject.transform
-            .Find("visual")
-            .GetComponent<SpriteRenderer>()
-            .DOFade(1f, .35f)
-            .SetEase(Ease.InQuad);
     }
 }

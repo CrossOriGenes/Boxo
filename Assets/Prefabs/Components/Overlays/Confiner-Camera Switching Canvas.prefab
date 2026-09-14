@@ -236,8 +236,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb74b463d632a4306a2b0d476437f9be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraBoundsController
-  _confinerColliders:
-  - {fileID: 0}
-  - {fileID: 0}
+  _confinerColliders: []
   _playerFollowCam: {fileID: 0}
   _cameraTransitOverlay: {fileID: 3095722249881698924}

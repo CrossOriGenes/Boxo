@@ -5,11 +5,9 @@ using UnityEngine.Rendering.Universal;
 
 public class SourceTeleport : MonoBehaviour
 {
-    [Header("Player reference")]
+    [Header("")]
     [SerializeField] private GameObject _player;
-
-    [Header("Values")]
-    [SerializeField] private int _sceneSourceAreaNumber = 1;
+    [SerializeField] private int _destinationIndex = 1;
 
     // Local References
     public static event Action<int> Teleported;
@@ -99,15 +97,15 @@ public class SourceTeleport : MonoBehaviour
                 )
                 .SetEase(Ease.OutQuad)
                 .OnPlay(
-                    () => Teleported?.Invoke(_sceneSourceAreaNumber)                  
+                    () => Teleported?.Invoke(_destinationIndex)                  
                 )
-                .OnComplete(() =>
-                    gameObject.transform
-                    .Find("visual")
-                    .GetComponent<SpriteRenderer>()
-                    .DOFade(0f, .35f)
-                    .SetEase(Ease.OutQuad)
-                )
+                // .OnComplete(() =>
+                //     gameObject.transform
+                //     .Find("visual")
+                //     .GetComponent<SpriteRenderer>()
+                //     .DOFade(0f, .35f)
+                //     .SetEase(Ease.OutQuad)
+                // )
             );
     }
 
@@ -130,10 +128,10 @@ public class SourceTeleport : MonoBehaviour
     {
         CrossedCheckpoint = false;
         _hasEntered = false;
-        gameObject.transform
-                .Find("visual")
-                .GetComponent<SpriteRenderer>()
-                .DOFade(1f, .35f)
-                .SetEase(Ease.InQuad);
+        // gameObject.transform
+        //         .Find("visual")
+        //         .GetComponent<SpriteRenderer>()
+        //         .DOFade(1f, .35f)
+        //         .SetEase(Ease.InQuad);
     }
 }
