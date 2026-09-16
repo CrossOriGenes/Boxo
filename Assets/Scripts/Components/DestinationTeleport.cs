@@ -7,7 +7,7 @@ public class DestinationTeleport : MonoBehaviour
 {
     [Header("")]
     [SerializeField] private GameObject _player;
-    [SerializeField] private int _sourceIndex = 1;
+    [SerializeField] private int _teleportPairIndex = 1;
 
     // Local references
     public static event Action<int> ChangeGameLevelCameraToNewArea;
@@ -29,17 +29,19 @@ public class DestinationTeleport : MonoBehaviour
 
     private void OnEnable()
     {
+        SourceTeleport_v2.Teleported += EndTeleportSequence;
         SourceTeleport.Teleported += EndTeleportSequence;
     }
 
     private void OnDisable()
     {
+        SourceTeleport_v2.Teleported -= EndTeleportSequence;
         SourceTeleport.Teleported -= EndTeleportSequence;
     }
 
     private void EndTeleportSequence(int sourceTeleportIndex)
     {
-        if (sourceTeleportIndex != _sourceIndex) 
+        if (sourceTeleportIndex != _teleportPairIndex) 
             return;
 
         Sequence _teleportSequence = DOTween.Sequence();

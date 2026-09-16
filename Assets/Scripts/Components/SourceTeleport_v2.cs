@@ -1,9 +1,14 @@
-using System;
+/**
+*  This Source Teleport (version 2) is only for scenes with
+*  multiple areas where only micro-checkpoint is present
+*  in that area strictly.
+**/
 using DG.Tweening;
+using System;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-public class SourceTeleport : MonoBehaviour
+public class SourceTeleport_v2 : MonoBehaviour
 {
     [Header("")]
     [SerializeField] private GameObject _player;
@@ -35,13 +40,13 @@ public class SourceTeleport : MonoBehaviour
 
     private void OnEnable()
     {
-        Checkpoint.CheckpointCrossed += HandleIsCheckpointCrossed;
+        ObjectEnablerCheckpoint.MicroCheckpointCrossed += HandleCurrentCheckpointCrossed;
         GameScreenOverlayUI.RestartLevel += ResetTeleportStats;
     }
 
     private void OnDisable()
     {
-        Checkpoint.CheckpointCrossed -= HandleIsCheckpointCrossed;
+        ObjectEnablerCheckpoint.MicroCheckpointCrossed -= HandleCurrentCheckpointCrossed;
         GameScreenOverlayUI.RestartLevel -= ResetTeleportStats;
     }
 
@@ -113,9 +118,11 @@ public class SourceTeleport : MonoBehaviour
         _playerLight = _player.GetComponentInChildren<Light2D>();
     }
 
-    private void HandleIsCheckpointCrossed()
+    private void HandleCurrentCheckpointCrossed(
+        int checkpointAreaIndex)
     {
-        CrossedCheckpoint = true;
+        if (checkpointAreaIndex == _teleportPairIndex)
+            CrossedCheckpoint = true;
     }
 
     private void ResetTeleportStats()

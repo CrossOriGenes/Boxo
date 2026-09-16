@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
@@ -7,7 +8,9 @@ public class ObjectEnablerCheckpoint : MonoBehaviour
     [Header("")]
     [SerializeField] private GameObject _object;
     [SerializeField] private Light2D _activationLight;
+    [SerializeField] private int _currentAreaIndex = 1;
 
+    public static event Action<int> MicroCheckpointCrossed;
     private bool _hasTouched;
 
     private void Awake()
@@ -44,8 +47,10 @@ public class ObjectEnablerCheckpoint : MonoBehaviour
             AudioManager.Instance.PlaySFX(SFXType.Checkpoint)
         )
         .OnComplete(() =>
-            _object.SetActive(true)
-        );
+        {
+            _object.SetActive(true);
+            MicroCheckpointCrossed?.Invoke(_currentAreaIndex);    
+        });
     }
 
     private void ResetActivations()
