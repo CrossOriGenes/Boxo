@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5390892698694393385}
   - component: {fileID: 2829513282086630268}
   - component: {fileID: 8863044383137369800}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Fumes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4882,7 +4882,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4221765476908167803}
   - component: {fileID: 306262830009153215}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Surface_waves_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4974,7 +4974,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1426762565349734946}
   - component: {fileID: 5985110540908507370}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Pool-surface_waves
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5033,10 +5033,11 @@ GameObject:
   - component: {fileID: 1716202319137888305}
   - component: {fileID: 5634823326917207146}
   - component: {fileID: 780508546498758360}
+  - component: {fileID: 4532222178258324516}
   - component: {fileID: 1986978252399940189}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Poison Pool
-  m_TagString: Untagged
+  m_TagString: Lethals
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5203,6 +5204,90 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4532222178258324516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4358655635069599754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.2D.Runtime::UnityEngine.Rendering.Universal.Light2D
+  m_ComponentVersion: 4
+  m_LightType: 1
+  m_BlendStyleIndex: 0
+  m_Light2DProvider:
+    rid: -2
+  m_SelectionSources:
+    rid: 5482976942416986188
+  m_FalloffIntensity: 0.86
+  m_Color: {r: 0.50487196, g: 1, b: 0, a: 1}
+  m_Intensity: 8.05
+  m_LightVolumeIntensity: 1
+  m_LightVolumeEnabled: 0
+  m_ApplyToSortingLayers: 00000000993455ce6dca250045c0c0a1e7bf4e97518acb8667b0fb8bad939e2f
+  m_LightCookieSprite: {fileID: 0}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: -2
+  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 1
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowsEnabled: 1
+  m_ShadowIntensity: 0.75
+  m_ShadowSoftness: 0.3
+  m_ShadowSoftnessFalloffIntensity: 0.5
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.75
+  m_LocalBounds:
+    m_Center: {x: 0.97994995, y: 0.049599648, z: 0}
+    m_Extent: {x: 23.71375, y: 15.2135, z: 0}
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 5.92
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 13.14
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -9.596243, y: -2.0243833, z: 0}
+  - {x: 9.964257, y: -1.188428, z: 0}
+  - {x: 11.555594, y: 2.1227376, z: 0}
+  - {x: -8.959203, y: 0.9425671, z: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 5482976942416986188
+      type: {class: Light2DProviderSources, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data:
+        m_SelectedHashCode: 1
+        m_SelectedSource:
+          rid: 5482976942416986190
+        m_Provider2DCache:
+          rid: 5482976942416986189
+    - rid: 5482976942416986189
+      type: {class: 'Provider2DCache`1[[UnityEngine.Rendering.Universal.Light2DProvider, Unity.RenderPipelines.Universal.2D.Runtime]]', ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data:
+        m_Cache: []
+    - rid: 5482976942416986190
+      type: {class: Light2DSource_BuiltIn, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data:
+        m_HashCode: 4
+        m_SourceType: 1
+        m_MenuPriority: 0
+        m_MenuName:
+          m_Text: Freeform
+          m_Image: {fileID: 2800000, guid: 68e5bb6e60bebc046b26d3c3100a523b, type: 3}
+          m_Tooltip: 
+          m_TextWithWhitespace: "Freeform\u200B"
 --- !u!114 &1986978252399940189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5224,7 +5309,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4258264288328753803}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5258,7 +5343,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5004505414526985335}
   - component: {fileID: 8063575412739954658}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Pool_liquid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5350,7 +5435,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8550955525835990234}
   - component: {fileID: 7192701468229863495}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Surface_waves_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5443,7 +5528,7 @@ GameObject:
   - component: {fileID: 3045236236187629703}
   - component: {fileID: 31294943644146960}
   - component: {fileID: 7134634021464300400}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bubbling_effects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10287,7 +10372,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2491287695890209585}
   - component: {fileID: 6697120289561048666}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Surface_waves_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10379,7 +10464,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5904299146668337534}
   - component: {fileID: 6597443581544101673}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Surface_waves_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10471,7 +10556,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7498977493137383752}
   - component: {fileID: 4361360785818135401}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PoisonAudioSFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}

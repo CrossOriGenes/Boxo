@@ -12,11 +12,12 @@ TagManager:
   - Checkpoint
   - Achievables
   - Teleport
+  - Lethals
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Lethal Pools
   - Water
   - UI
   - Level Boundary

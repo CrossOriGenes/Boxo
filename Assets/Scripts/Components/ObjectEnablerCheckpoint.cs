@@ -11,7 +11,8 @@ public class ObjectEnablerCheckpoint : MonoBehaviour
     [SerializeField] private int _currentAreaIndex = 1;
 
     public static event Action<int> MicroCheckpointCrossed;
-    private bool _hasTouched;
+    private bool _hasTouched,
+                _isActivated;
 
     private void Awake()
     {
@@ -21,12 +22,12 @@ public class ObjectEnablerCheckpoint : MonoBehaviour
 
     private void OnEnable()
     {
-        Checkpoint.DeActivateThisFromOtherPoint += ResetActivations;
+        GameScreenOverlayUI.RestartLevel += ResetActivations;
     }
 
     private void OnDisable()
     {
-        Checkpoint.DeActivateThisFromOtherPoint -= ResetActivations;
+        GameScreenOverlayUI.RestartLevel -= ResetActivations;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -35,6 +36,7 @@ public class ObjectEnablerCheckpoint : MonoBehaviour
             return;
 
         _hasTouched = true;
+        _isActivated = true;
 
         DOTween.To(
             () => _activationLight.intensity,
@@ -55,8 +57,10 @@ public class ObjectEnablerCheckpoint : MonoBehaviour
 
     private void ResetActivations()
     {
-        _object.SetActive(false);
+        if (!_isActivated) return;
+
         _activationLight.intensity = 0f;
         _hasTouched = false;
+        _object.SetActive(false);
     }
 }

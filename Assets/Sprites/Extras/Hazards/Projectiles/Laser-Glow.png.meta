@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 61f025d1eeb564624bd2fb9c489f812e
+guid: 6e6790a1415934884bcf8f945344da61
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5782897899209647520
-    second: Laser-Turret Sprites_0
-  - first:
-      213: 9034052607802796048
-    second: Laser-Turret Sprites_1
+      213: -7649389788835584711
+    second: Laser-Glow_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -49,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
-  alignment: 0
+  spriteMeshType: 0
+  alignment: 4
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 377
+  spritePixelsToUnits: 400
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -142,45 +139,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Laser-Turret Base
+      name: Laser-Glow_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 7
-        width: 467
-        height: 370
+        x: 0
+        y: 0
+        width: 460
+        height: 54
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0a56ebe000bf04050800000000000000
-      internalID: 5782897899209647520
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Laser-Turret Head
-      rect:
-        serializedVersion: 2
-        x: 509
-        y: 19
-        width: 123
-        height: 292
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 018e64a7bf66f5d70800000000000000
-      internalID: 9034052607802796048
+      spriteID: 93564f7e388e7d590800000000000000
+      internalID: -7649389788835584711
       vertices: []
       indices: 
       edges: []
@@ -189,7 +164,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 93deea06113554d4ea613ff4278c3ecc
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -197,12 +172,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      Laser-Turret Base: 5782897899209647520
-      Laser-Turret Head: 9034052607802796048
+      Laser-Glow_0: -7649389788835584711
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -24,6 +24,8 @@ public class GameScreenOverlayUI : MonoBehaviour
     [SerializeField] private CanvasGroup _emoji;
 
     public static event Action RestartLevel;
+    public static event Action PauseGame;
+    public static event Action ResumeGame;
     private RectTransform _pauseBtnTransform;
 
     private void Awake()
@@ -65,6 +67,8 @@ public class GameScreenOverlayUI : MonoBehaviour
             );
 
         Debug.Log("Game Paused");
+        
+        PauseGame?.Invoke();
 
         OpenOverlayPanel();
     }
@@ -95,6 +99,8 @@ public class GameScreenOverlayUI : MonoBehaviour
             
             AudioManager.Instance.ResumeAudio();
             AmbientLoopAudio.ResumeAll();
+            AmbientLoopAudio_v2.ResumeAll();
+            ResumeGame?.Invoke();
         });
     }
 
@@ -123,6 +129,7 @@ public class GameScreenOverlayUI : MonoBehaviour
 
             AudioManager.Instance.RestartGamePlayMusic();
             AmbientLoopAudio.RestartAll();
+            AmbientLoopAudio_v2.RestartAll();
 
             Debug.Log("Game Re-started");
             RestartLevel?.Invoke();
@@ -219,6 +226,7 @@ public class GameScreenOverlayUI : MonoBehaviour
         pauseSequence.OnComplete(() =>
         {
             AmbientLoopAudio.PauseAll();
+            AmbientLoopAudio_v2.PauseAll();
             AudioManager.Instance.PauseAudio();
 
             GameStatsManager.Instance.SetPaused(true);

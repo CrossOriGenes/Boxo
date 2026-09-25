@@ -17,7 +17,7 @@ public class Checkpoint : MonoBehaviour
     [SerializeField] private GameObject _key;
 
     public static event Action CheckpointCrossed;
-    public static event Action DeActivateThisFromOtherPoint;
+    // public static event Action DeActivateThisFromOtherPoint;
     private SpriteRenderer _spriteRenderer;
     private bool _isActivated;
 
@@ -110,6 +110,6 @@ public class Checkpoint : MonoBehaviour
         
         _isActivated = false;
 
-        DeActivateThisFromOtherPoint?.Invoke();
+        // DeActivateThisFromOtherPoint?.Invoke();
     }
 }
