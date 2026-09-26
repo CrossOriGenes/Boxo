@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 8176227509722520135}
   - component: {fileID: 8329299886176678394}
   - component: {fileID: 6964549129478322553}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enabler Checkpoint
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,6 +95,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ObjectEnablerCheckpoint
   _object: {fileID: 0}
   _activationLight: {fileID: 5273308110957757331}
+  _currentAreaIndex: 1
 --- !u!1 &4157550081547727397
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,7 +106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8268845084898697266}
   - component: {fileID: 5273308110957757331}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Spot Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -210,7 +211,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3604584406031592739}
   - component: {fileID: 4411751611006038416}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
