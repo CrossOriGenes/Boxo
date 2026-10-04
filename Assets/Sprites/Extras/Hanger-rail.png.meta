@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6e6790a1415934884bcf8f945344da61
+guid: 665e49495dbf24f4f9e2c325fd91bf0d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7649389788835584711
-    second: Laser-Glow_0
+      213: 1577199573314425851
+    second: Hanger-rail_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,9 +49,9 @@ TextureImporter:
   spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 4
+  alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 400
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Laser-Glow_0
+      name: Hanger-rail_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 460
-        height: 54
+        width: 665
+        height: 130
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 93564f7e388e7d590800000000000000
-      internalID: -7649389788835584711
+      spriteID: bf3dd43d7a653e510800000000000000
+      internalID: 1577199573314425851
       vertices: []
       indices: 
       edges: []
@@ -174,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Laser-Glow_0: -7649389788835584711
+      Hanger-rail_0: 1577199573314425851
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

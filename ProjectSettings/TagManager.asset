@@ -13,6 +13,7 @@ TagManager:
   - Achievables
   - Teleport
   - Lethals
+  - Lever Switch
   layers:
   - Default
   - TransparentFX

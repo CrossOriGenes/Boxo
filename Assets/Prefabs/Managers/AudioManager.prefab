@@ -339,10 +339,10 @@ MonoBehaviour:
     volume: 0.8
   - type: 9
     clip: {fileID: 8300000, guid: e96aa35ca8c9d41f89f46bb930b360ec, type: 3}
-    volume: 0.8
+    volume: 0.67
   - type: 10
     clip: {fileID: 8300000, guid: 6f3af2313b9d74b6a90a9857c30a2760, type: 3}
-    volume: 0.8
+    volume: 0.67
   - type: 11
     clip: {fileID: 8300000, guid: 6c817b2a187f34364b6b3524e0a6bd9c, type: 3}
     volume: 0.75

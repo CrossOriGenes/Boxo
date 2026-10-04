@@ -21,12 +21,14 @@ public class DamageController : MonoBehaviour
     [SerializeField] private Sprite _sadMood;
 
     private GameObject _player;
-    private Vector3 _respawnPosition;
-    private Vector3 _playerStartingPos;
+    private Vector3 _respawnPosition,
+                    _playerStartingPos;
     private SpriteRenderer _visualRenderer;
     private HealthBar _healthBarController;
-    private Tween _fullDamageTween;
-    private bool _isTakingFullDamage;
+    private Tween _fullDamageTween,
+                  _continuousDamageTween;
+    private bool _isTakingFullDamage,
+                _isTakingContinuousDamage;
     private const float MAX_HEALTH = 100f;
     private float _currentHealth;
     public float CurrentHealth => _currentHealth;
@@ -42,6 +44,13 @@ public class DamageController : MonoBehaviour
     private void OnDisable()
     {
         GameScreenOverlayUI.RestartLevel -= HandleLevelRestart;
+
+        _fullDamageTween?.Kill();
+        _continuousDamageTween?.Kill();
+        _fullDamageTween = null;
+        _continuousDamageTween = null;
+        _isTakingFullDamage = false;
+        _isTakingContinuousDamage = false;
     }
 
     private void Awake()
@@ -133,6 +142,61 @@ public class DamageController : MonoBehaviour
             });
     }
 
+    public void StartContinuousDamage(float damagePerSecond)
+    {
+        if (_isTakingContinuousDamage ||
+        damagePerSecond <= 0f ||
+        _currentHealth <= 0f) 
+            return;
+
+        _isTakingContinuousDamage = true;
+        _continuousDamageTween?.Kill();
+
+        float damageDuration = 
+            _currentHealth / damagePerSecond;
+        _continuousDamageTween =
+            DOTween.To(
+                () => _currentHealth,
+                value =>
+                {
+                    _currentHealth = value;
+                    _healthBarController.UpdateHealthBarImmediate(
+                        _currentHealth,
+                        MAX_HEALTH
+                    );
+                    OnHealthChanged?.Invoke(GetHealthPercent());
+                },
+                0f,
+                damageDuration
+            )
+            .SetEase(Ease.Linear)
+            .OnComplete(() =>
+            {
+                _currentHealth = 0f;
+                _healthBarController.UpdateHealthBarImmediate(
+                    _currentHealth,
+                    MAX_HEALTH
+                );
+                OnHealthChanged?.Invoke(GetHealthPercent());
+                
+                _isTakingContinuousDamage = false;
+                _continuousDamageTween = null;
+               
+                Die();
+            });
+    }
+
+    public void StopContinuousDamage()
+    {
+        if (!_isTakingContinuousDamage)
+            return;
+
+        _continuousDamageTween?.Kill();
+
+        _continuousDamageTween = null;
+        _isTakingContinuousDamage = false; 
+    }
+
     private void Die()
     {
         _deathParticle.Play();
@@ -147,7 +211,6 @@ public class DamageController : MonoBehaviour
         _rb.simulated = false;
         StartCoroutine(Respawn());
     }
-
     private IEnumerator Respawn()
     {
         yield return new WaitForSeconds(1f);
@@ -179,7 +242,6 @@ public class DamageController : MonoBehaviour
         else
             FaceChanger(_happyMood);
     }
-
     private void FaceChanger(Sprite newSprite)
     {
         if (_visualRenderer.sprite == newSprite) 
@@ -198,7 +260,20 @@ public class DamageController : MonoBehaviour
             }
         );
     }
-    
+    public void RefreshFaceByHealth()
+    {
+        ChangePlayerFaceByHealth();
+    }
+    public void SetShockFace(Sprite shockSprite)
+    {
+        if (shockSprite == null)
+            return;
+
+        _visualRenderer.DOKill();
+        _visualRenderer.color = Color.white;
+        _visualRenderer.sprite = shockSprite;
+    }
+
     private float GetHealthPercent()
     {
         return (_currentHealth / MAX_HEALTH) * 100f;
@@ -214,6 +289,13 @@ public class DamageController : MonoBehaviour
 
     private void HandleLevelRestart()
     {
+        _continuousDamageTween?.Kill();
+        _continuousDamageTween = null;
+        _isTakingContinuousDamage = false;
+        _fullDamageTween?.Kill();
+        _fullDamageTween = null;
+        _isTakingFullDamage = false;
+
         _player.transform.position = _playerStartingPos;
         _playerController.enabled = false;
         _groundCheck.SetActive(false);

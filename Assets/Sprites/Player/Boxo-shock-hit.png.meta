@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6e6790a1415934884bcf8f945344da61
+guid: c11e9e21d7d8d4d7c983485c0502bfe8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7649389788835584711
-    second: Laser-Glow_0
+      213: -6769009075553648106
+    second: Boxo-shock-hit_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -49,9 +49,9 @@ TextureImporter:
   spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 4
+  alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 400
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Laser-Glow_0
+      name: Boxo-shock-hit_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 460
-        height: 54
+        width: 222
+        height: 222
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 93564f7e388e7d590800000000000000
-      internalID: -7649389788835584711
+      spriteID: 612ca3a0c16af02a0800000000000000
+      internalID: -6769009075553648106
       vertices: []
       indices: 
       edges: []
@@ -174,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Laser-Glow_0: -7649389788835584711
+      Boxo-shock-hit_0: -6769009075553648106
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

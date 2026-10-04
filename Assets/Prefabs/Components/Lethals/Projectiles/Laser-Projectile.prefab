@@ -58,7 +58,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9541e99f1e7f34104bad38e99bba756f, type: 2}
+  - {fileID: 2100000, guid: 58bb6740202394aeb8f3b9ca320bb61b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -203,5 +203,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e6869cb008cf4a4198896d72c2ab6dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
-  _speed: 15
-  _lifetime: 3

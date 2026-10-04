@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9d23c5dd570434d2b8507115adb7566a
+guid: 76319fd1b95e34ba99dda317da8e3b89
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2785521171648996128
-    second: Laser-Projectile_0
+      213: 2300726211744846420
+    second: Electric-jolt-clipped_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,18 +40,18 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 1
-    wrapV: 1
-    wrapW: 1
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 0
-  alignment: 4
+  alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 412
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Laser-Projectile_0
+      name: Electric-jolt-clipped_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 410
-        height: 5
+        y: 5
+        width: 412
+        height: 102
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0ec1881b047d759d0800000000000000
-      internalID: -2785521171648996128
+      spriteID: 4525b70cc42ddef10800000000000000
+      internalID: 2300726211744846420
       vertices: []
       indices: 
       edges: []
@@ -164,7 +164,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -174,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Laser-Projectile_0: -2785521171648996128
+      Electric-jolt-clipped_0: 2300726211744846420
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
