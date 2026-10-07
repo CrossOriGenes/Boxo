@@ -580,7 +580,7 @@ MonoBehaviour:
   _audioSource: {fileID: 5157693539511863092}
   _player: {fileID: 0}
   _fullVolumeDistance: 2.5
-  _fadeStartDistance: 3.5
+  _fadeStartDistance: 4.16
   _stopDistance: 4
   _maxVolume: 0.32
   _fadeInDuration: 0.5

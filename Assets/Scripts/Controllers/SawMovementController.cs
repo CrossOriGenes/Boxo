@@ -24,26 +24,36 @@ public class SawMovementController : MonoBehaviour
     [SerializeField] private float _rotationDeceleration = 1500f;
 
     private float _currentMoveSpeed;
+    public float CurrentMoveSpeed => _currentMoveSpeed;
     private float _currentRotationSpeed;
     private int _moveDirection = 1;
+    public int MoveDirection => _moveDirection;
     private bool _isSawActive;
+    public bool IsSawActive => _isSawActive;
     private bool _isStopping;
+    public bool IsStopping => _isStopping;
     private Vector3 _initialPosition; 
+    private Quaternion _initialBladeRotation;
 
 
     private void Awake()
     {
         _initialPosition = transform.position;
+        Transform blade = transform.Find("Blade");
+        if (blade != null)
+            _initialBladeRotation = blade.localRotation;
     }
     
     private void OnEnable()
     {
         PressSwitch.SwitchPressed += HandleSawActivation;
+        GameScreenOverlayUI.RestartLevel += ResetSaw;
     }
 
     private void OnDisable()
     {
         PressSwitch.SwitchPressed -= HandleSawActivation;
+        GameScreenOverlayUI.RestartLevel -= ResetSaw;
     }
 
     private void Update()
@@ -64,11 +74,12 @@ public class SawMovementController : MonoBehaviour
 
         _isSawActive = true;
         _isStopping = false;
+    }
 
-        Debug.Log(
-            $"Saw ACTIVATED | Passcode: {_connectorPasscode}",
-            this
-        );
+    private void HandleSawDeactivation(string passcode)
+    {
+        if (passcode == _connectorPasscode)
+            DeactivateSaw();
     }
 
     private void DeactivateSaw()
@@ -76,11 +87,6 @@ public class SawMovementController : MonoBehaviour
         if (!_isSawActive) return;
 
         _isStopping = true;
-
-        Debug.Log(
-            $"Saw STOPPING | Passcode: {_connectorPasscode}",
-            this
-        );
     }
 
     private void HandleBladeRotation()
@@ -164,5 +170,21 @@ public class SawMovementController : MonoBehaviour
             Mathf.Approximately(newX, targetX);
         
         if (reachedTarget) _moveDirection *= -1;
+    }
+
+    private void ResetSaw()
+    {
+        _isSawActive = false;
+        _isStopping = false;
+
+        _currentMoveSpeed = 0f;
+        _currentRotationSpeed = 0f;
+
+        _moveDirection = 1;
+
+        transform.position = _initialPosition;
+        Transform blade = transform.Find("Blade");
+        if (blade != null)
+            blade.localRotation = _initialBladeRotation;
     }
 }

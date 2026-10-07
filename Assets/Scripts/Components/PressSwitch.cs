@@ -14,6 +14,24 @@ public class PressSwitch : MonoBehaviour
     
 
     private bool _isPressed;
+    private Vector3 _initialVisualLocalPosition;
+
+
+    private void OnEnable()
+    {
+        GameScreenOverlayUI.RestartLevel += ResetSwitch;    
+    }
+    
+    private void OnDisable()
+    {
+        GameScreenOverlayUI.RestartLevel -= ResetSwitch;    
+    }
+
+    private void Awake()
+    {
+        _initialVisualLocalPosition =   
+            _switchVisualPos.localPosition;    
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -32,10 +50,17 @@ public class PressSwitch : MonoBehaviour
                     transform.position
                 )
             )
-            .OnComplete(() => {
-                Debug.Log($"Switch ON | Passcode: {_connectorPasscode}");
-                
-                SwitchPressed?.Invoke(_connectorPasscode);
-            });
+            .OnComplete(() =>     
+                SwitchPressed?.Invoke(_connectorPasscode)
+            );
+    }
+
+    private void ResetSwitch()
+    {
+        _isPressed = false;
+
+        _switchVisualPos.DOKill();
+        _switchVisualPos.localPosition = 
+            _initialVisualLocalPosition;
     }
 }
