@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SawMovementController : MonoBehaviour
+public class SawMovementController : MonoBehaviour, ILeverTarget
 {
     [Header("Rail-movement Points")]
     [SerializeField] private Transform _pointA;
@@ -8,6 +8,7 @@ public class SawMovementController : MonoBehaviour
 
     [Header("Passcode")]
     [SerializeField] private string _connectorPasscode;
+    public string Passcode => _connectorPasscode;
 
     [Header("Metrics")]
     [Range(1f, 5f)]
@@ -67,6 +68,11 @@ public class SawMovementController : MonoBehaviour
         if (passcode == _connectorPasscode)
             ActivateSaw();
     }
+    private void HandleSawDeactivation(string passcode)
+    {
+        if (passcode == _connectorPasscode)
+            DeactivateSaw();
+    }
 
     private void ActivateSaw()
     {
@@ -75,18 +81,20 @@ public class SawMovementController : MonoBehaviour
         _isSawActive = true;
         _isStopping = false;
     }
-
-    private void HandleSawDeactivation(string passcode)
-    {
-        if (passcode == _connectorPasscode)
-            DeactivateSaw();
-    }
-
     private void DeactivateSaw()
     {
         if (!_isSawActive) return;
 
         _isStopping = true;
+    }
+
+    public void Activate()
+    {
+        ActivateSaw();
+    }
+    public void Deactivate()
+    {
+        DeactivateSaw();
     }
 
     private void HandleBladeRotation()
