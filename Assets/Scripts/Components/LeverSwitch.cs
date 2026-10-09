@@ -34,11 +34,24 @@ public class LeverSwitch : MonoBehaviour, IInteractable
     private bool _playerSteppedIn;
     private const float _LIGHT_MAX_INTENSITY = 10f;
     private const float LIGHT_FADING_DURATION = .5f;
+    private Quaternion _leverHandleInitialRotation;
 
+
+    private void OnEnable()
+    {
+        GameScreenOverlayUI.RestartLevel += ResetLeverSwitch;    
+    }
+
+    private void OnDisable()
+    {
+        GameScreenOverlayUI.RestartLevel -= ResetLeverSwitch;
+    }
 
     private void Awake()
     {
         _glowHighlight.intensity = 0f;
+        _leverHandleInitialRotation = 
+            _leverHandlePivot.localRotation;
     }
 
     public void HandlePlayerStepInActions()
@@ -176,5 +189,21 @@ public class LeverSwitch : MonoBehaviour, IInteractable
         }
 
         return operatedAnyTarget;
+    }
+
+    private void ResetLeverSwitch()
+    {
+        _hasOperated = false;
+        _playerSteppedIn = false;
+
+        _leverHandlePivot.DOKill();
+        _glowHighlight.DOKill();
+
+        _leverHandlePivot.localRotation = 
+            _leverHandleInitialRotation;
+        _glowHighlight.intensity = 0f;
+
+        _interactionPrompt
+            .HideLeverSwitchInteractionPrompt();
     }
 }
