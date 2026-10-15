@@ -204,8 +204,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -108.2, y: 0}
-  m_SizeDelta: {x: 40, y: 45}
+  m_AnchoredPosition: {x: -103, y: 0}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2356337976848125862
 CanvasRenderer:
@@ -804,14 +804,49 @@ MonoBehaviour:
   _playerInput: {fileID: 0}
   _iconSets:
   - deviceType: 0
+    actionType: 0
     icon: {fileID: 21300000, guid: 49f88109d71a84db0b1941fb0253fd48, type: 3}
   - deviceType: 1
+    actionType: 0
     icon: {fileID: 21300000, guid: 0b3dc039ab75645859d8bb2c90227e4e, type: 3}
   - deviceType: 2
+    actionType: 0
     icon: {fileID: 21300000, guid: 37e80444ba75f4ae899f5b56b15f3f1a, type: 3}
   - deviceType: 3
+    actionType: 0
     icon: {fileID: 21300000, guid: 7902822b54e1a46e2957d658bfa38d7e, type: 3}
   - deviceType: 4
+    actionType: 0
+    icon: {fileID: 21300000, guid: 64ceb62264e9a4b8abfb9a9e72fc581f, type: 3}
+  - deviceType: 0
+    actionType: 1
+    icon: {fileID: 21300000, guid: 8bb7e349dd58c415381415e943266cd4, type: 3}
+  - deviceType: 1
+    actionType: 1
+    icon: {fileID: 21300000, guid: cd051a4daf3d84c87a1b994d08b524a8, type: 3}
+  - deviceType: 2
+    actionType: 1
+    icon: {fileID: 21300000, guid: 17837019f0594451793d8fa85a22f86d, type: 3}
+  - deviceType: 3
+    actionType: 1
+    icon: {fileID: 21300000, guid: 10950730308c049ec9ff81b6158b8e11, type: 3}
+  - deviceType: 4
+    actionType: 1
+    icon: {fileID: 21300000, guid: 98b3b5897d0b04e47a93ece539dcb56e, type: 3}
+  - deviceType: 0
+    actionType: 2
+    icon: {fileID: 21300000, guid: 8bb7e349dd58c415381415e943266cd4, type: 3}
+  - deviceType: 1
+    actionType: 2
+    icon: {fileID: 21300000, guid: cd051a4daf3d84c87a1b994d08b524a8, type: 3}
+  - deviceType: 2
+    actionType: 2
+    icon: {fileID: 21300000, guid: 17837019f0594451793d8fa85a22f86d, type: 3}
+  - deviceType: 3
+    actionType: 2
+    icon: {fileID: 21300000, guid: 10950730308c049ec9ff81b6158b8e11, type: 3}
+  - deviceType: 4
+    actionType: 2
     icon: {fileID: 21300000, guid: 98b3b5897d0b04e47a93ece539dcb56e, type: 3}
 --- !u!1 &3215389000602530502
 GameObject:

@@ -67,7 +67,7 @@ public class DestinationTeleport : MonoBehaviour
             {
                 _player
                     .GetComponent<Animation>()
-                    .Play("PortalOut");
+                    .Play("TeleportOut");
                 AudioManager.Instance.PlaySFXAtPosition(
                     SFXType.PortalOut,
                     transform.position

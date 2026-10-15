@@ -87,7 +87,7 @@ public class LeverSwitch : MonoBehaviour, IInteractable
         )
         .SetEase(Ease.OutQuad)
         .OnPlay(
-            () => _interactionPrompt.HideLeverSwitchInteractionPrompt()
+            () => _interactionPrompt.HideInteractionPrompt()
         );
     }
 
@@ -115,7 +115,7 @@ public class LeverSwitch : MonoBehaviour, IInteractable
             {
                 _hasOperated = true;
                 _playerSteppedIn = false;
-                _interactionPrompt.HideLeverSwitchInteractionPrompt();
+                _interactionPrompt.HideInteractionPrompt();
                 
                 _glowHighlight.DOKill();
                 DOTween.To(
@@ -204,6 +204,6 @@ public class LeverSwitch : MonoBehaviour, IInteractable
         _glowHighlight.intensity = 0f;
 
         _interactionPrompt
-            .HideLeverSwitchInteractionPrompt();
+            .HideInteractionPrompt();
     }
 }

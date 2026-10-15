@@ -4,10 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
+
 [Serializable]
 public class PromptIconSet
 {
     public PromptDeviceType deviceType;
+    public PromptActionType actionType;
     public Sprite icon;
 }
 
@@ -73,14 +75,16 @@ public class InteractionPromptController : MonoBehaviour
         return PromptDeviceType.GenericGamepad;
     }
 
-    private Sprite GetCurrentDeviceIcon()
+    private Sprite GetCurrentDeviceIcon(
+        PromptActionType actionType)
     {
         PromptDeviceType deviceType =
             DetectDeviceType();
 
         foreach (PromptIconSet iconSet in _iconSets)
         {
-            if (iconSet.deviceType == deviceType)
+            if (iconSet.deviceType == deviceType &&
+            iconSet.actionType == actionType)
                 return iconSet.icon;
         }
 
@@ -93,12 +97,36 @@ public class InteractionPromptController : MonoBehaviour
         _text2 = "to switch Lever";
         _textPart1.text = _text1;
         _textPart2.text = _text2;
-        _buttonIcon.sprite = GetCurrentDeviceIcon();
+        _buttonIcon.sprite = 
+            GetCurrentDeviceIcon(PromptActionType.Lever);
 
         gameObject.SetActive(true);
     }
 
-    public void HideLeverSwitchInteractionPrompt()
+    public void ShowVentInInteractionPrompt()
+    {
+        _text1 = "Press";
+        _text2 = "to enter Vent";
+        _textPart1.text = _text1;
+        _textPart2.text = _text2;
+        _buttonIcon.sprite = 
+            GetCurrentDeviceIcon(PromptActionType.VentIn);
+
+        gameObject.SetActive(true);
+    }
+    public void ShowVentOutInteractionPrompt()
+    {
+        _text1 = "Press";
+        _text2 = "to exit Vent";
+        _textPart1.text = _text1;
+        _textPart2.text = _text2;
+        _buttonIcon.sprite = 
+            GetCurrentDeviceIcon(PromptActionType.VentOut);
+
+        gameObject.SetActive(true);
+    }
+
+    public void HideInteractionPrompt()
     {
         _text1 = _text2 = "";
         _textPart1.text = _text1;

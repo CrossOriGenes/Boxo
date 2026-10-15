@@ -47,7 +47,7 @@ public class LevelExitPortal : MonoBehaviour
         );
         sequence.AppendCallback(
             () => {
-                other.GetComponent<Animation>().Play("PortalIn");
+                other.GetComponent<Animation>().Play("TeleportIn");
                 AudioManager.Instance.PlaySFXAtPosition(
                     SFXType.PortalIn,
                     transform.position

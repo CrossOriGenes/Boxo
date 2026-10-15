@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2649916883610553736}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Surface_Bubbles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2887526942554780432}
   - component: {fileID: 896661546046613641}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Layer-7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 1265795982046634586}
   - component: {fileID: 8028121740921578221}
   - component: {fileID: 6675957653317332641}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Magma_Bursts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5030,7 +5030,7 @@ GameObject:
   - component: {fileID: 2565650915648533495}
   - component: {fileID: 7457011178556266288}
   - component: {fileID: 1493360479257976666}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Surface_Bubbling (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9865,7 +9865,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3197850909147817034}
   - component: {fileID: 491042024717633498}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Magma_liquid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9958,7 +9958,7 @@ GameObject:
   - component: {fileID: 2344150560556128151}
   - component: {fileID: 4029608115078857836}
   - component: {fileID: 8890892392751181010}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Surface_Bubbling (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14793,7 +14793,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3444815715576404883}
   - component: {fileID: 5767493050901180646}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Layer-8 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14885,7 +14885,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4387765237387242151}
   - component: {fileID: 4898913423413287900}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LavaAudioSFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14938,7 +14938,7 @@ GameObject:
   m_Component:
   - component: {fileID: 681930949861274643}
   - component: {fileID: 5542281158194274505}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Layer-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15030,7 +15030,7 @@ GameObject:
   m_Component:
   - component: {fileID: 453352695996488064}
   - component: {fileID: 5790708321455173234}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Layer-6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15122,7 +15122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7985249214082188041}
   - component: {fileID: 5906881851747592909}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Layer-4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15217,9 +15217,9 @@ GameObject:
   - component: {fileID: 1729727657007395017}
   - component: {fileID: 2585528069869542982}
   - component: {fileID: 2351435821611223246}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lava Pool
-  m_TagString: Untagged
+  m_TagString: Lethals
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15493,7 +15493,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7401793271281572120}
   - component: {fileID: 205541206786761331}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Layer-5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15585,7 +15585,7 @@ GameObject:
   m_Component:
   - component: {fileID: 699775509882819175}
   - component: {fileID: 3766640054838130350}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Layer-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15677,7 +15677,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2167056053762298396}
   - component: {fileID: 6097078751666839173}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Layer-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15769,7 +15769,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7770306069559827455}
   - component: {fileID: 4294517777143017886}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: VIsual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15833,7 +15833,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9088414994374622803}
   - component: {fileID: 3187522018453582030}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Layer-8 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

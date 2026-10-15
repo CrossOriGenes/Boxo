@@ -82,7 +82,7 @@ public class SourceTeleport : MonoBehaviour
             {
                 _player
                     .GetComponent<Animation>()
-                    .Play("PortalIn");
+                    .Play("TeleportIn");
                 AudioManager.Instance.PlaySFXAtPosition(
                     SFXType.PortalIn,
                     transform.position
@@ -99,7 +99,6 @@ public class SourceTeleport : MonoBehaviour
                 .OnPlay(
                     () => Teleported?.Invoke(_teleportPairIndex)                  
                 )
-                // .OnComplete(() => {})
             );
     }
 

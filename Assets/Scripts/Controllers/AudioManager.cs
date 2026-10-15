@@ -19,7 +19,10 @@ public enum SFXType
     TurretLight,
     TurretLaser,
     SawBlade,
-    Blower
+    Blower,
+    VentIn,
+    VentOut,
+    DoorHatchShift
 }
 
 public enum UISFXType

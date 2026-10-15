@@ -358,6 +358,15 @@ MonoBehaviour:
   - type: 15
     clip: {fileID: 8300000, guid: d41859bc8cf5544b6bc5f1c307f7c2d8, type: 3}
     volume: 0.35
+  - type: 16
+    clip: {fileID: 8300000, guid: d8b1c40a0f9ba426d80883a35c02c5a1, type: 3}
+    volume: 0.75
+  - type: 17
+    clip: {fileID: 8300000, guid: 58def87a09c00464eb25639288c3ad59, type: 3}
+    volume: 0.75
+  - type: 18
+    clip: {fileID: 8300000, guid: 5440b503caa2b4d5bae3163b2e424144, type: 3}
+    volume: 0.4
   _uiSfxData:
   - type: 0
     clip: {fileID: 8300000, guid: d735d8d44a05c44168327e5fa8485b3d, type: 3}

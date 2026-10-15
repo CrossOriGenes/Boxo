@@ -19,8 +19,15 @@ public class PlayerController : MonoBehaviour
     private bool _isFacingRight = true;
     private bool _canControl = true;
     private bool _isKnockedBack;
+    private bool _hasVented;
+    public bool HasVented
+    {
+        get => _hasVented;
+        set => _hasVented = value;
+    }
 
     private IInteractable _currentInteractable;
+    private IVent _currentVent;
 
 
     private void Awake()
@@ -62,6 +69,19 @@ public class PlayerController : MonoBehaviour
             return;
 
         _currentInteractable?.Interact();
+    }
+
+    public void OnVent(InputAction.CallbackContext context)
+    {
+        if (!context.performed ||
+        !_canControl || 
+        _isKnockedBack)
+            return;
+
+        if (_hasVented)
+            _currentVent?.VentOut();
+        else    
+            _currentVent?.VentIn();
     }
 
     private void FixedUpdate()
@@ -132,11 +152,27 @@ public class PlayerController : MonoBehaviour
         _currentInteractable = interactable;
     }
 
+    public void SetCurrentVent(IVent vent)
+    {
+        _currentVent = vent;
+    }
+
+    public void UpdateCurrentVent(IVent vent)
+    {
+        _currentVent = vent;
+    }
+
     public void ClearCurrentInteractable(
         IInteractable interactable
     )
     {
         if (_currentInteractable == interactable)
             _currentInteractable = null;
+    }
+
+    public void ClearCurrentVent(IVent vent)
+    {
+        if (_currentVent == vent && !HasVented)
+            _currentVent = null;
     }
 }
