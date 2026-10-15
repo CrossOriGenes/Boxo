@@ -309,7 +309,7 @@ public class DamageController : MonoBehaviour
     }
     private IEnumerator RestartLevel()
     {
-        yield return new WaitForSeconds(.7f);
+        yield return new WaitForSecondsRealtime(.7f);
         _respawnPosition = _playerStartingPos;
         _rb.simulated = true;
         _rb.linearVelocity = Vector2.zero;

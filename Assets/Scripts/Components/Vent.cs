@@ -53,16 +53,19 @@ public class Vent :
     }
     public string Passcode => _connectorPasscode;
     public string VentNetworkPassword => _ventsNetworkPasscode;
+    private Sequence _activeSequence;
 
 
     private void OnEnable()
     {
         LeverSwitch.LeverPressed += HandleActivation;
+        GameScreenOverlayUI.RestartLevel += ResetVentState;
     }
 
     private void OnDisable()
     {
         LeverSwitch.LeverPressed -= HandleActivation;
+        GameScreenOverlayUI.RestartLevel -= ResetVentState;
     }
 
     private void Awake()
@@ -216,9 +219,9 @@ public class Vent :
 
     private void PlayVentTravelSequence(Vent destinationVent)
     {
-        Sequence sequence = DOTween.Sequence();
+        _activeSequence = DOTween.Sequence();
 
-        sequence.AppendCallback(() =>
+        _activeSequence.AppendCallback(() =>
         {
             _playerRb.linearVelocity = Vector2.zero;
             _playerRb.angularVelocity = 0f;
@@ -247,7 +250,7 @@ public class Vent :
             destinationVent.ShowNavigationArrows();
         });
 
-        sequence.OnKill(() =>
+        _activeSequence.OnKill(() =>
         {
             _isVentTransitioning = false;
             destinationVent._isVentTransitioning = false;
@@ -255,9 +258,9 @@ public class Vent :
     } 
     private void PlayVentEnterSequence()
     {
-        Sequence sequence = DOTween.Sequence();
+        _activeSequence = DOTween.Sequence();
 
-        sequence.AppendCallback(() =>
+        _activeSequence.AppendCallback(() =>
         {
             _playerRb.linearVelocity = Vector2.zero;
             _playerRb.angularVelocity = 0f;
@@ -291,7 +294,7 @@ public class Vent :
             Animation playerAnimation =
                 _player.GetComponent<Animation>();
             if (playerAnimation != null)
-                playerAnimation.Play("TeleportIn");
+                playerAnimation.Play("VentIn");
             else
                 Debug.LogWarning("Player Animation component not found!", _player);
         })
@@ -329,7 +332,7 @@ public class Vent :
             _interactionPrompt.ShowVentOutInteractionPrompt();
         });
 
-        sequence.OnKill(() =>
+        _activeSequence.OnKill(() =>
         {
             //Avoid leaving the vent locked if this sequence is cancelled
             if (_isVentTransitioning)
@@ -338,9 +341,9 @@ public class Vent :
     }
     private void PlayVentExitSequence()
     {
-        Sequence sequence = DOTween.Sequence();
+        _activeSequence = DOTween.Sequence();
 
-        sequence.AppendCallback(() =>
+        _activeSequence.AppendCallback(() =>
         {
             _playerRb.linearVelocity = Vector2.zero;
             _playerRb.angularVelocity = 0f;
@@ -371,13 +374,7 @@ public class Vent :
             Animation playerAnimation = 
                 _player.GetComponent<Animation>();
             if (playerAnimation != null)
-                playerAnimation.Play("TeleportOut");
-            DOTween.To(
-                () => _playerLight.intensity,
-                value => _playerLight.intensity = value,
-                _initialPlayerLightIntensity,
-                .35f
-            ).SetEase(Ease.OutQuad);
+                playerAnimation.Play("VentOut");
 
             _playerRb.simulated = true;
             _playerRb.linearVelocity = Vector2.zero;
@@ -394,6 +391,15 @@ public class Vent :
                 ForceMode2D.Impulse
             );
         })
+        .Join(
+            DOTween.To(
+                () => _playerLight.intensity,
+                value => _playerLight.intensity = value,
+                _initialPlayerLightIntensity,
+                .35f
+            )
+            .SetEase(Ease.OutQuad)
+        )
         .AppendInterval(.12f)
         .Join(
             _ventDoorPosition
@@ -411,7 +417,7 @@ public class Vent :
             _isVentTransitioning = false;
         });
 
-        sequence.OnKill(() =>
+        _activeSequence.OnKill(() =>
         {
             _isVentTransitioning = false;
         });
@@ -488,7 +494,6 @@ public class Vent :
             _ => Vector2.up,
         };
     }
-
     private float GetExitThrust()
     {
         return _mountingType switch
@@ -499,5 +504,51 @@ public class Vent :
             VentMountingType.RightWall => _wallExitThrust,
             _ => _floorExitThrust,
         };
+    }
+
+    private void ResetVentState()
+    {
+        if (_activeSequence != null &&
+        _activeSequence.IsActive())
+            _activeSequence.Kill(false);
+
+        _activeSequence = null;
+        _isVentTransitioning = false;
+        HasActivated = false;
+
+        ClearNavigationArrows();
+        SetNavigationUI(false);
+
+        if (_ventDoorPosition != null)
+        {
+            Vector3 doorPosition = 
+                _ventDoorPosition.localPosition;
+            doorPosition.x = 0f;
+            _ventDoorPosition.localPosition = doorPosition;
+        }
+
+        Transform playerVisual = 
+            _player.transform.Find("Visual");
+        playerVisual.localScale = new Vector3(1, 1, 1);
+        playerVisual
+            .GetComponent<SpriteRenderer>()
+            .DOFade(1f, .1f)
+            .SetEase(Ease.InQuad);
+        _player.transform
+            .Find("Health")
+            .Find("HealthBar")
+            .GetComponent<RectTransform>()
+            .localScale = 
+                new Vector3(0.0055f, 0.0046f, 0.005f);
+        if (_playerLight != null)
+            _playerLight.intensity = _initialPlayerLightIntensity;
+        if (_interactionPrompt != null)
+            _interactionPrompt.HideInteractionPrompt();
+        if (_playerController != null)
+        {
+            _playerController.HasVented = false;
+            _playerController.UpdateCurrentVent(null);
+            _playerController.ResetMovement();
+        }
     }
 }
