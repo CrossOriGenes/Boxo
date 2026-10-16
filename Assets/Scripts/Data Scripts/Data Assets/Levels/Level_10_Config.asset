@@ -15,4 +15,4 @@ MonoBehaviour:
   levelId: Level_10
   levelName: Level 10
   scoringProfile: {fileID: 11400000, guid: e8af708f448ea4eff9593e9a38f90124, type: 2}
-  totalGems: 25
+  totalGems: 35

@@ -9,10 +9,20 @@ public class Checkpoint_v2 : MonoBehaviour
     [SerializeField] private Animator _visualAnimator;
     [SerializeField] private GameObject _defaultRing;
     [SerializeField] private GameObject _checkpointCrossedRing;
+    [SerializeField] private Transform _respawnPoint; 
 
-    private bool hasCrossedCheckpoint;
+    private bool _hasCrossedCheckpoint;
 
 
+    private void OnEnable()
+    {
+        GameScreenOverlayUI.RestartLevel += HandleResetCheckpoint;
+    }
+    private void OnDisable()
+    {
+        GameScreenOverlayUI.RestartLevel -= HandleResetCheckpoint;
+    } 
+    
     private void Awake()
     {
         ShowCheckpointDefaultRing();
@@ -20,7 +30,25 @@ public class Checkpoint_v2 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        
+        if (_hasCrossedCheckpoint ||
+        !other.CompareTag("Player"))
+            return;
+
+        _hasCrossedCheckpoint = true;
+
+        AudioManager.Instance.PlaySFXAtPosition(
+            SFXType.Checkpoint,
+            transform.position
+        );
+
+        ShowCheckpointCrossedRing();
+
+        DamageController playerDamageController = 
+            other.GetComponentInChildren<DamageController>();
+        if (playerDamageController != null)
+            playerDamageController.SetRespawnPoint(
+                _respawnPoint.position
+            );
     }
 
     private void ShowCheckpointDefaultRing()
@@ -35,5 +63,12 @@ public class Checkpoint_v2 : MonoBehaviour
         _checkpointCrossedRing.SetActive(true);   
         _defaultRing.SetActive(false);
         _visualAnimator.SetBool(HasCrossedCheckpointHash, true);
+    }
+
+    private void HandleResetCheckpoint()
+    {
+        _hasCrossedCheckpoint = false;
+
+        ShowCheckpointDefaultRing();
     }
 }
