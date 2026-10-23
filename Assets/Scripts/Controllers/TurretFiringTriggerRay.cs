@@ -13,12 +13,26 @@ public class TurretFiringTriggerRay : MonoBehaviour
     [SerializeField] private LineRenderer _lineRenderer;
     [SerializeField] private EdgeCollider2D _edgeCollider;
 
-    private LaserTurretController _turretController;
+    private ITurretActivator _turretController;
 
     private void Awake()
     {
-        _turretController =
-            GetComponentInParent<LaserTurretController>();
+        MonoBehaviour[] parents =
+            GetComponentsInParent<MonoBehaviour>(true);
+        
+        foreach (MonoBehaviour component in parents)
+        {
+            if (component is ITurretActivator activator)
+            {
+                _turretController = activator;
+                break;
+            }
+        }
+        if (_turretController == null)
+            Debug.LogError(
+                $"No ITurretActivator found in parent hierarchy of '{name}'.",
+                this
+            );
 
         CreateTriggerLine();
     }
@@ -116,6 +130,6 @@ public class TurretFiringTriggerRay : MonoBehaviour
         if (!other.CompareTag("Player"))
             return;
 
-        _turretController.ActivateTurret();
+        _turretController?.ActivateTurret();
     }
 }

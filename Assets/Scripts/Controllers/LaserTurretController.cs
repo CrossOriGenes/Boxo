@@ -1,7 +1,9 @@
 using System;
 using UnityEngine;
 
-public class LaserTurretController : MonoBehaviour
+public class LaserTurretController : 
+MonoBehaviour,
+ITurretActivator
 {
     private static readonly int IsFiringHash = 
         Animator.StringToHash("isFiringLaser");

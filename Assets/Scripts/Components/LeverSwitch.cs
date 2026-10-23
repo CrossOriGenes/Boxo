@@ -100,8 +100,12 @@ public class LeverSwitch : MonoBehaviour, IInteractable
         if (!operatedAnyTarget) return;
 
         _leverHandlePivot
-            .DORotate(
-                new Vector3(0, 0, 45f), 
+            .DOLocalRotate(
+                new Vector3(
+                    _leverHandlePivot.localEulerAngles.x, 
+                    _leverHandlePivot.localEulerAngles.y, 
+                    _leverHandleInitialRotation.eulerAngles.z + 90f
+                ), 
                 .3f
             )
             .SetEase(Ease.OutQuad)
