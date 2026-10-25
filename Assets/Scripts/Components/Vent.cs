@@ -154,8 +154,6 @@ public class Vent :
 
         ClearNavigationArrows();
         SetNavigationUI(false);
-
-        _interactionPrompt.HideInteractionPrompt();
         
         PlayVentExitSequence();
     }
@@ -415,6 +413,7 @@ public class Vent :
         .OnComplete(() =>
         {
             _isVentTransitioning = false;
+            _interactionPrompt.HideInteractionPrompt();
         });
 
         _activeSequence.OnKill(() =>

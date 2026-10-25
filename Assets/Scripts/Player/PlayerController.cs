@@ -71,17 +71,26 @@ public class PlayerController : MonoBehaviour
         _currentInteractable?.Interact();
     }
 
-    public void OnVent(InputAction.CallbackContext context)
+    public void OnVentIn(InputAction.CallbackContext context)
     {
         if (!context.performed ||
         !_canControl || 
-        _isKnockedBack)
+        _isKnockedBack ||
+        _hasVented)
+            return;
+ 
+        _currentVent?.VentIn();
+    }
+
+    public void OnVentOut(InputAction.CallbackContext context)
+    {
+        if (!context.performed ||
+        !_canControl ||
+        _isKnockedBack ||
+        !_hasVented)
             return;
 
-        if (_hasVented)
-            _currentVent?.VentOut();
-        else    
-            _currentVent?.VentIn();
+        _currentVent?.VentOut();    
     }
 
     private void FixedUpdate()

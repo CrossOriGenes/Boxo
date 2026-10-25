@@ -52,9 +52,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Vent",
+                    "name": "VentIn",
                     "type": "Button",
                     "id": "f4d9bdd3-b9d0-4225-842f-085829916e8f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "VentOut",
+                    "type": "Button",
+                    "id": "1b67c566-2ca9-4578-8c5e-ecd14e5e0b6e",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -366,7 +375,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Vent",
+                    "action": "VentIn",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -377,7 +386,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
-                    "action": "Vent",
+                    "action": "VentIn",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -388,7 +397,40 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";XR",
-                    "action": "Vent",
+                    "action": "VentIn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "33d2f06e-4003-4b8e-bb08-0856550ef61a",
+                    "path": "<Keyboard>/g",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "VentOut",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "41484c98-d1bc-493c-b360-777b994eda98",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "VentOut",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "115efebf-563c-4fb5-802f-f0a315f06080",
+                    "path": "<XRController>{RightHand}/{SecondaryAction}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";XR",
+                    "action": "VentOut",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
