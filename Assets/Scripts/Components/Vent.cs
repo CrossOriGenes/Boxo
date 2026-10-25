@@ -157,6 +157,22 @@ public class Vent :
         
         PlayVentExitSequence();
     }
+    public void Navigate(Vector2 direction)
+    {
+        if (_isVentTransitioning || 
+        _playerController == null ||
+        !_playerController.HasVented ||
+        direction.sqrMagnitude < .5f)
+            return;
+
+        foreach (VentArrowUI arrow in _spawnedArrows)
+        {
+            if (arrow == null) continue;
+
+            if (arrow.TryNavigate(direction))
+                return;
+        }
+    }
 
     public void TravelToVent(Vent destinationVent)
     {

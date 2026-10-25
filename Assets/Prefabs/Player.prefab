@@ -10445,6 +10445,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 1b67c566-2ca9-4578-8c5e-ecd14e5e0b6e
     m_ActionName: 'Player/VentOut[/Keyboard/g,/SwitchProControllerHID/rightShoulder]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2689607472017155340}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnVentNavigate
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c5d1e973-4220-409c-a08f-f19413eb0483
+    m_ActionName: Player/VentNavigate
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player

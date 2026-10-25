@@ -63,9 +63,46 @@ public class VentArrowUI : MonoBehaviour
 
     private void OnArrowClicked()
     {
-        if (_sourceVent == null || _destinationVent == null)
+        if (_sourceVent == null || 
+        _destinationVent == null)
             return;
 
         _sourceVent.TravelToVent(_destinationVent);
+    }
+
+    public bool TryNavigate(Vector2 inputDirection)
+    {
+        if (_sourceVent == null ||
+        _destinationVent == null)
+            return false;
+
+        Vector2 worldDirection = 
+            _destinationVent.transform.position -
+            _sourceVent.transform.position;
+
+        if (worldDirection.sqrMagnitude < .001f)
+            return false;
+
+        int inputSector = GetDirectionSector(inputDirection);
+        int arrowSector = GetDirectionSector(worldDirection);
+
+        if (inputSector != arrowSector)
+            return false;
+
+        _sourceVent.TravelToVent(_destinationVent);
+        return true;
+    }
+
+    private int GetDirectionSector(Vector2 direction)
+    {
+        float angle = 
+            Mathf.Atan2(
+                direction.y, 
+                direction.x
+            ) * Mathf.Rad2Deg;
+
+        if (angle < 0f) angle += 360f;
+
+        return Mathf.RoundToInt(angle / 45f) % 8;
     }
 }

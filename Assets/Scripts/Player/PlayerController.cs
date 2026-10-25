@@ -93,6 +93,22 @@ public class PlayerController : MonoBehaviour
         _currentVent?.VentOut();    
     }
 
+    public void OnVentNavigate(InputAction.CallbackContext context)
+    {
+        if (!context.performed ||
+        !_canControl ||
+        _isKnockedBack ||
+        !_hasVented)
+            return;
+
+        Vector2 direction = 
+            context.ReadValue<Vector2>();
+        
+        if (direction.sqrMagnitude < .5f) return;
+
+        _currentVent?.Navigate(direction);
+    }
+
     private void FixedUpdate()
     {
         HandleMovement();

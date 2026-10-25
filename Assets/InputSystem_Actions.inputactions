@@ -68,6 +68,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "VentNavigate",
+                    "type": "Value",
+                    "id": "c5d1e973-4220-409c-a08f-f19413eb0483",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -431,6 +440,17 @@
                     "processors": "",
                     "groups": ";XR",
                     "action": "VentOut",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3fee2067-2d9b-4956-b507-497f6936609f",
+                    "path": "<Gamepad>/dpad",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "VentNavigate",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
